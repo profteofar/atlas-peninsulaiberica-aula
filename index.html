@@ -1,0 +1,1094 @@
+<!doctype html>
+<html><head><meta charset="utf8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Atlas da Península Ibérica</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=Lexend:wght@300;400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<!--
+  ATLAS DA PENÍNSULA IBÉRICA — HGP 5.º/6.º ano · Ficha de Avaliação n.º 1 (Grupos I e II)
+  Imagens referidas localmente (colocar na mesma pasta deste ficheiro):
+  Nível C: imagem1c globo · 2c planisfério · 3c linhas imaginárias (legendadas) · 4c Europa/Portugal · 5c planície · 6c montanha · 7c zonas climáticas · 8c rios
+  Nível B: imagem1b globo · 2b fotografia aérea · 3b imagem de satélite · 4b planisfério · 5b linhas (A–D, 1–4) · 6b Europa (rosa-dos-ventos) · 7b relevo · 8b climas · 9b zonas (caixas) · 10b rios · 11b Ibéria Húmida/Seca
+  Nível A: imagem1a planisfério · 2a imagem de satélite · 3a fotografia aérea · 4a globo · 5a linhas · 6a Europa · 7a relevo · 8a climas · 9a zonas · 10a rios · 11a Ibéria Húmida/Seca
+  Para usar outros ficheiros, altere apenas o objeto IMG no início do script.
+-->
+<style>
+/* Layout: atlas escolar — faixa de topo azul-mar, percurso em "curvas de nível" (C planície → B planalto → A montanha), cartões de exercício como folhas de atlas */
+:root{
+  --sea:#e4eff3; --paper:#fbfdfd; --paper2:#f1f7f9; --ink:#16374b; --muted:#557282; --line:#c6dae2;
+  --accent:#16679a; --accent-ink:#ffffff; --land:#e3ae4f; --land-soft:#f6e3bb;
+  --lvC:#9fbf6a; --lvB:#d39a4a; --lvA:#8b5a2b; --ok:#2c7a4f; --ok-soft:#dff1e6; --bad:#b8402f; --bad-soft:#f8e2dd; --warn-soft:#fbefd2;
+  --f-display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --f-body:"Lexend", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "Consolas", monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --sea:#0c1b24; --paper:#12283a; --paper2:#173246; --ink:#e2edf2; --muted:#9db6c3; --line:#28465a;
+  --accent:#5db2e3; --accent-ink:#06202f; --land:#e0ab4e; --land-soft:#3a3020;
+  --lvC:#9fc06a; --lvB:#dba256; --lvA:#c08a55; --ok:#6fcf97; --ok-soft:#173a2a; --bad:#f08a78; --bad-soft:#3e2120; --warn-soft:#3a3120; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --sea:#0c1b24; --paper:#12283a; --paper2:#173246; --ink:#e2edf2; --muted:#9db6c3; --line:#28465a;
+  --accent:#5db2e3; --accent-ink:#06202f; --land:#e0ab4e; --land-soft:#3a3020;
+  --lvC:#9fc06a; --lvB:#dba256; --lvA:#c08a55; --ok:#6fcf97; --ok-soft:#173a2a; --bad:#f08a78; --bad-soft:#3e2120; --warn-soft:#3a3120; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--sea);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;font-weight:400}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+h1,h2,h3,h4{font-family:var(--f-display);line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800}
+h2{font-size:clamp(1.35rem,3vw,1.8rem);font-weight:800}
+h3{font-size:1.2rem;font-weight:600}
+p{margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--land);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.mono{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase}
+
+/* topo */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+.topin{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto}
+.brand svg{flex:none}
+.brand b{font-family:var(--f-display);font-weight:800;font-size:1.1rem;line-height:1.1}
+.brand small{display:block;color:var(--muted);font-size:.75rem}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;max-width:100%}
+nav.tabs button{border:0;background:none;padding:8px 12px;border-radius:999px;cursor:pointer;color:var(--muted);font-weight:500;white-space:nowrap}
+nav.tabs button[aria-current="true"]{background:var(--accent);color:var(--accent-ink)}
+nav.tabs button:hover:not([aria-current="true"]){background:var(--paper2);color:var(--ink)}
+
+main{padding-block:28px 64px}
+.view{display:grid;gap:24px}
+.lead{max-width:65ch;color:var(--muted)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);padding:9px 16px;border-radius:8px;cursor:pointer;font-weight:500}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.small{padding:5px 11px;font-size:.88rem}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:2px 10px;border-radius:999px;background:var(--paper2);border:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+
+/* escada de níveis (curvas de nível) */
+.ladder{display:grid;gap:0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+.band{display:grid;grid-template-columns:110px 1fr auto;gap:16px;align-items:center;padding:16px 18px;border:0;text-align:left;cursor:pointer;background:var(--paper);border-top:1px solid var(--line);width:100%}
+.band:first-child{border-top:0}
+.band .alt{display:grid;gap:2px}
+.band .sw{height:12px;border-radius:3px}
+.band .alt span{font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+.band h3{font-size:1.1rem}
+.band p{color:var(--muted);font-size:.9rem}
+.band[disabled]{cursor:not-allowed;opacity:.6}
+.band:hover:not([disabled]){background:var(--paper2)}
+.bar{height:8px;background:var(--paper2);border-radius:99px;overflow:hidden;border:1px solid var(--line);min-width:90px}
+.bar i{display:block;height:100%;background:var(--accent)}
+
+/* módulo */
+.stepper{display:flex;gap:6px;flex-wrap:wrap}
+.stepper button{border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:6px 10px;cursor:pointer;font-size:.85rem;display:flex;gap:6px;align-items:center}
+.stepper button[aria-current="true"]{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.stepper .dot{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.stepper .dot.done{background:var(--ok)}
+.lesson{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.lesson .blk{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;min-width:0}
+.lesson .blk.wide{grid-column:1/-1}
+.lesson h4{font-family:var(--f-mono);font-weight:500;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.lesson .blk.mis{background:var(--warn-soft)}
+dl.terms{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;margin:0}
+dl.terms dt{font-weight:600}
+dl.terms dd{margin:0;color:var(--muted)}
+ul.clean{margin:0;padding-left:1.1em;display:grid;gap:6px}
+
+/* documentos */
+figure.doc{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:10px;display:grid;gap:6px;min-width:0}
+figure.doc img{display:block;width:100%;height:auto;border-radius:6px;background:#fff}
+figure.doc figcaption{font-size:.82rem;color:var(--muted)}
+figure.doc figcaption b{font-family:var(--f-mono);font-weight:500;color:var(--ink)}
+.docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.imgmiss{display:grid;place-items:center;min-height:140px;border:2px dashed var(--line);border-radius:6px;color:var(--muted);font-size:.85rem;text-align:center;padding:12px}
+
+/* exercícios */
+.ex{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;display:grid;gap:14px;min-width:0}
+.ex .q{font-weight:500;font-size:1.04rem}
+.ex .meta{display:flex;gap:8px;flex-wrap:wrap}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:8px;cursor:pointer;background:var(--paper2);text-align:left;width:100%}
+.opt input{margin-top:5px;accent-color:var(--accent)}
+.opt.sel{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.imgopts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.imgopt{border:2px solid var(--line);border-radius:10px;background:#fff;padding:6px;cursor:pointer;display:grid;gap:6px}
+.imgopt img{width:100%;height:150px;object-fit:contain}
+.imgopt.sel{border-color:var(--accent)} .imgopt.right{border-color:var(--ok)} .imgopt.wrong{border-color:var(--bad)}
+.imgopt span{font-size:.85rem;color:#16374b;text-align:center}
+table.match{border-collapse:collapse;width:100%}
+.tscroll{overflow-x:auto}
+table.match th{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);font-weight:500}
+table.match td{padding:8px;border-bottom:1px solid var(--line);vertical-align:middle}
+table.match select{width:100%;min-width:140px;padding:6px 8px;border-radius:6px;border:1px solid var(--line);background:var(--paper2)}
+select.right,input.right,textarea.right{border-color:var(--ok)!important;background:var(--ok-soft)!important}
+select.wrong,input.wrong,textarea.wrong{border-color:var(--bad)!important;background:var(--bad-soft)!important}
+.tf{display:grid;gap:8px}
+.tfrow{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--paper2)}
+.tfrow .vf{display:flex;gap:6px}
+.tfrow .vf button{width:40px;height:36px;border-radius:6px;border:1px solid var(--line);background:var(--paper);cursor:pointer;font-weight:600}
+.tfrow .vf button.sel{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tfrow.right{border-color:var(--ok)} .tfrow.wrong{border-color:var(--bad)}
+.tfrow .fix{grid-column:1/-1}
+textarea,input[type=text]{width:100%;padding:9px 11px;border-radius:8px;border:1px solid var(--line);background:var(--paper2)}
+textarea{min-height:76px;resize:vertical}
+.hot{position:relative;overflow:hidden;border-radius:8px;border:1px solid var(--line);background:#fff;cursor:crosshair;max-width:640px}
+.hot .inner{position:relative}
+.hot img{display:block;max-width:none;height:auto}
+.hot .pin{position:absolute;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;border:3px solid var(--bad);background:rgba(255,255,255,.4);pointer-events:none}
+.hot .pin.ok{border-color:var(--ok)}
+.hot .zone{position:absolute;border:2px dashed #2c7a4f;border-radius:6px;pointer-events:none}
+.order{display:grid;gap:6px}
+.order li{list-style:none;display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--paper2)}
+.order ol{margin:0;padding:0;display:grid;gap:6px}
+.order li .n{font-family:var(--f-mono);color:var(--muted);width:20px}
+.order li span.t{flex:1}
+.order li button{border:1px solid var(--line);background:var(--paper);border-radius:6px;width:32px;height:30px;cursor:pointer}
+.fb{border-radius:8px;padding:12px 14px;display:grid;gap:6px;font-size:.95rem}
+.fb.ok{background:var(--ok-soft);border:1px solid var(--ok)}
+.fb.no{background:var(--bad-soft);border:1px solid var(--bad)}
+.fb.info{background:var(--paper2);border:1px solid var(--line)}
+.fb b.h{font-family:var(--f-display);font-size:1.05rem}
+.fb .mis{font-size:.9rem}
+.fb a, .linkbtn{color:var(--accent);cursor:pointer;text-decoration:underline;background:none;border:0;padding:0}
+
+/* laboratório */
+.labgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.labcard{display:grid;gap:8px;text-align:left;cursor:pointer;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px;width:100%}
+.labcard:hover{border-color:var(--accent)}
+.labcard p{color:var(--muted);font-size:.92rem}
+.analogy{border-left:4px solid var(--land);background:var(--land-soft);padding:12px 14px;border-radius:0 8px 8px 0}
+.stepbox{display:grid;gap:14px}
+
+/* teste e relatório */
+.tq-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+.diff{display:inline-flex;gap:3px;align-items:flex-end}
+.diff i{width:8px;border-radius:2px;background:var(--line)}
+.diff i.on{background:var(--lvA)}
+.score{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center}
+.ring{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-size:1.8rem;font-weight:800}
+.ring span{background:var(--paper);width:92px;height:92px;border-radius:50%;display:grid;place-items:center}
+.cbars{display:grid;gap:10px}
+.cbar{display:grid;grid-template-columns:minmax(0,220px) 1fr 52px;gap:12px;align-items:center;font-size:.92rem}
+.cbar .track{height:12px;background:var(--paper2);border-radius:99px;border:1px solid var(--line);overflow:hidden}
+.cbar .track i{display:block;height:100%}
+.cbar b{font-family:var(--f-mono);font-weight:500;text-align:right;font-variant-numeric:tabular-nums}
+.pill{display:inline-block;padding:1px 9px;border-radius:99px;font-size:.75rem;font-weight:600}
+.pill.alta{background:var(--bad-soft);color:var(--bad)} .pill.media{background:var(--warn-soft);color:var(--lvA)} .pill.ok{background:var(--ok-soft);color:var(--ok)}
+.plan{display:grid;gap:12px;counter-reset:p}
+.plan .pi{display:grid;gap:6px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--paper)}
+.errs{display:grid;gap:10px}
+.errs .e{padding:12px 14px;border-radius:8px;background:var(--paper2);border:1px solid var(--line);display:grid;gap:4px;font-size:.93rem}
+
+/* glossário e professor */
+.gloss{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.gloss .g{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.gloss .g b{font-family:var(--f-display);font-size:1.02rem}
+.gloss .g p{color:var(--muted);font-size:.92rem}
+.prof{display:grid;gap:16px}
+.prof section{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;display:grid;gap:10px}
+.prof li{max-width:75ch}
+.rank{display:grid;gap:10px;margin:0;padding:0;list-style:none;counter-reset:r}
+.rank li{counter-increment:r;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
+.rank li::before{content:counter(r);font-family:var(--f-display);font-weight:800;font-size:1.4rem;color:var(--lvA);text-align:center}
+.hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:center}
+.hero .name{display:grid;gap:6px;max-width:340px}
+.hero label{font-size:.85rem;color:var(--muted)}
+.legend-note{font-size:.82rem;color:var(--muted)}
+.gate{display:grid;gap:14px;max-width:560px}
+.gatef,.cfgf{display:grid;gap:12px}
+.gatef label,.cfgf label{display:grid;gap:4px;font-size:.9rem}
+.send{display:grid;gap:10px}
+.send a.btn{text-decoration:none;display:inline-block}
+.prof section.cfg{border-color:var(--accent)}
+details summary{cursor:pointer;color:var(--accent);font-weight:500}
+pre.code{background:var(--paper2);border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto;font-family:var(--f-mono);font-size:.78rem;line-height:1.5;margin:0;white-space:pre}
+@media (max-width:720px){
+  .lesson{grid-template-columns:1fr}
+  .hero{grid-template-columns:1fr}
+  .band{grid-template-columns:72px 1fr}
+  .band .bar{grid-column:1/-1}
+  .cbar{grid-template-columns:1fr 46px}
+  .cbar .track{grid-column:1/-1;grid-row:2}
+  dl.terms{grid-template-columns:1fr}
+  dl.terms dd{margin-bottom:6px}
+  .score{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:no-preference){.fb{animation:pop .25s ease-out}@keyframes pop{from{transform:translateY(4px);opacity:.4}to{transform:none;opacity:1}}}
+</style>
+
+<header class="top">
+  <div class="wrap topin">
+    <div class="brand">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="none" stroke="currentColor" stroke-width="2"></circle><ellipse cx="17" cy="17" rx="7" ry="15" fill="none" stroke="currentColor" stroke-width="1.2"></ellipse><line x1="2" y1="17" x2="32" y2="17" stroke="currentColor" stroke-width="1.2"></line><path d="M11 12 l4 -2 l3 1 l1 3 l-2 3 l-4 1 l-2 -2z" fill="#e3ae4f"></path></svg>
+      <div><b>Atlas da Península Ibérica</b><small>HGP · Localização e quadro natural</small></div>
+    </div>
+    <nav class="tabs" id="tabs" aria-label="Secções">
+      <button data-v="percurso">Percurso</button>
+      <button data-v="laboratorio">Laboratório</button>
+      <button data-v="teste">Teste</button>
+      <button data-v="glossario">Glossário</button>
+      <button data-v="professor">Professor</button>
+    </nav>
+  </div>
+</header>
+<main class="wrap" id="app"></main>
+
+<script>
+/* ============ IMAGENS (ficheiros locais) ============ */
+const IMG = {
+  C:{globo:'imagem1c.jpg',planisferio:'imagem2c.jpg',linhas:'imagem3c.jpg',europa:'imagem4c.jpg',planicie:'imagem5c.jpg',montanha:'imagem6c.jpg',zonas:'imagem7c.jpg',rios:'imagem8c.jpg'},
+  B:{globo:'imagem1b.jpg',aerea:'imagem2b.jpg',satelite:'imagem3b.jpg',planisferio:'imagem4b.jpg',linhas:'imagem5b.jpg',europa:'imagem6b.jpg',relevo:'imagem7b.jpg',climas:'imagem8b.jpg',zonas:'imagem9b.jpg',rios:'imagem10b.jpg',vegetacao:'imagem11b.jpg'},
+  A:{planisferio:'imagem1a.jpg',satelite:'imagem2a.jpg',aerea:'imagem3a.jpg',globo:'imagem4a.jpg',linhas:'imagem5a.jpg',europa:'imagem6a.jpg',relevo:'imagem7a.jpg',climas:'imagem8a.jpg',zonas:'imagem9a.jpg',rios:'imagem10a.jpg',vegetacao:'imagem11a.jpg'}
+};
+
+/* ============ ENVIO DE RESULTADOS (configuração do professor) ============
+   email: endereço do professor (botão que abre o programa de correio)
+   script: URL /exec do Google Apps Script (envio automático + registo numa folha Google)
+   Pode preencher aqui ou na área do Professor (botão «Guardar versão dos alunos…»). */
+const CONFIG = {"email":"","script":"https://script.google.com/macros/s/AKfycbyEVa6LSTPWMrFBTrA0MMjVuxm_UMy74OlmkjVwRcJ19-DDdtrYN25K1T_eIUy1NDPh/exec"}; /*CONFIG*/
+const SRC = '<!doctype html>\n' + document.documentElement.outerHTML;
+/* Versão do aluno: quando a configuração está incorporada no ficheiro, a área do Professor fica escondida. */
+const ALUNO = !!(CONFIG.email || CONFIG.script);
+
+/* ============ CONCEITOS E EQUÍVOCOS ============ */
+const CONCEPTS = {
+  rep:{n:'Representações da Terra', lab:null},
+  lin:{n:'Linhas imaginárias e hemisférios', lab:'zonas'},
+  map:{n:'Elementos do mapa e escala', lab:'escala'},
+  ori:{n:'Orientação e localização', lab:'orientacao'},
+  rel:{n:'Relevo', lab:'relevo'},
+  cli:{n:'Clima', lab:'clima'},
+  zon:{n:'Zonas climáticas', lab:'zonas'},
+  rio:{n:'Rios e cursos de água', lab:null},
+  veg:{n:'Vegetação natural', lab:'vegetacao'}
+};
+const MIS = {
+  escala:'Trocar pequena e grande escala. Um mapa de pequena escala mostra uma área grande (um continente) com pouco pormenor.',
+  colateral:'Trocar pontos colaterais. Diz-se primeiro Norte ou Sul e depois Este ou Oeste: Sul + Oeste = Sudoeste.',
+  'hemisferio-central':'Pensar que existe um hemisfério «central». O Equador divide a Terra em apenas dois: norte e sul.',
+  'lin-troca':'Trocar o Equador com o Meridiano de Greenwich. O Equador separa Norte e Sul; Greenwich separa Oeste e Este.',
+  'pt-mediterraneo':'Pensar que Portugal é banhado pelo Mediterrâneo. Portugal só tem costa no Oceano Atlântico.',
+  'temperada-sul':'Confundir a «zona temperada do sul» com o sul de Portugal. Essa zona fica no hemisfério sul.',
+  'rio-nacional':'Confundir rios nacionais com rios luso-espanhóis. Um rio luso-espanhol nasce em Espanha.',
+  ebro:'Pensar que o Ebro passa em Portugal. Corre só em Espanha e desagua no Mediterrâneo.',
+  meseta:'Pensar que a Meseta é uma planície ou uma montanha. É um planalto: alta e plana.',
+  caduca:'Trocar folha caduca e folha persistente. «Caduca» vem de cair: a árvore fica sem folhas no outono.',
+  'clima-tempo':'Confundir clima com estado do tempo. O tempo é o de hoje; o clima é a média de muitos anos.',
+  'ilhas-rios':'Pensar que os Açores e a Madeira têm rios. As ilhas são pequenas: têm ribeiras, lagoas e levadas.',
+  'rep-satelite':'Confundir imagem de satélite com fotografia aérea. O satélite está no Espaço; o drone ou o avião voam na atmosfera.',
+  'mar-clima':'Esquecer que o oceano suaviza as temperaturas. Longe do mar, os verões são mais quentes e os invernos mais frios.',
+  'distancia-sol':'Pensar que faz frio nos polos por estarem mais longe do Sol. A causa é a inclinação dos raios solares.',
+  planisferio:'Pensar que o planisfério é fiel à realidade. Ao «achatar» a esfera, as formas e as áreas ficam deformadas.',
+  hipsometria:'Ler as cores do mapa de relevo como vegetação ou clima. As cores indicam a altitude.',
+  'clima-temp':'Descrever um clima só pela temperatura. A precipitação (chuva) também o define.'
+};
+
+/* ============ PERCURSO ============ */
+const LV = {
+  C:{name:'Nível C', sub:'Primeiros passos', alt:'0–200 m', form:'Planície', color:'var(--lvC)', next:'B', desc:'Exercícios simplificados com imagens: reconhecer, clicar e ligar.'},
+  B:{name:'Nível B', sub:'Ler mapas', alt:'200–1000 m', form:'Planalto', color:'var(--lvB)', next:'A', desc:'Completar quadros, legendas e escolher entre opções com chave.'},
+  A:{name:'Nível A', sub:'Explicar e aplicar', alt:'> 1000 m', form:'Montanha', color:'var(--lvA)', next:null, desc:'Respostas abertas, correção de afirmações e menos pistas.'}
+};
+
+const PATH = {
+C:{modules:[
+ {id:'c1',concept:'rep',title:'Como representamos a Terra?',
+  lesson:{c:'A Terra tem uma forma quase esférica. Para a estudar, usamos representações. O <b>globo terrestre</b> é uma pequena esfera, por isso é a representação que mais se parece com a Terra verdadeira. O <b>planisfério</b> mostra a Terra inteira numa folha plana.',
+   t:[['Globo terrestre','Representação da Terra em forma de esfera.'],['Planisfério','Representação de toda a Terra numa superfície plana.'],['Representação','Desenho ou modelo que mostra algo real em ponto pequeno.']],
+   p:'Na sala de aula, o globo serve para perceber a forma da Terra e rodá-la como ela roda. O planisfério cabe num caderno e mostra todos os continentes de uma só vez.',
+   e:['«O planisfério é a representação mais fiel.» Não é. Ao achatar uma esfera numa folha, as formas e os tamanhos deformam-se: a Gronelândia parece enorme, mas é muito mais pequena do que a América do Sul.']},
+  ex:[{type:'imgchoice',q:'Clica na imagem que <b>mais se aproxima</b> da representação real da Terra.',imgs:[{k:'globo',l:'Imagem 1'},{k:'planisferio',l:'Imagem 2'}],a:0,mis:{1:'planisferio'},exp:'O globo terrestre é uma esfera, tal como a Terra. O planisfério é plano e por isso deforma a realidade.'}]},
+ {id:'c2',concept:'lin',title:'As linhas imaginárias',doc:{k:'linhas',cap:'Doc. 2 – Linhas imaginárias da Terra'},
+  lesson:{c:'As linhas imaginárias não existem no terreno: são desenhadas nos globos e nos mapas para nos ajudar a localizar lugares. O <b>Equador</b> divide a Terra em hemisfério norte e hemisfério sul. O <b>Meridiano de Greenwich</b> vai de polo a polo e divide-a em hemisfério ocidental (oeste) e oriental (este).',
+   t:[['Equador','Linha que divide a Terra em hemisfério norte e hemisfério sul.'],['Meridiano de Greenwich','Linha de polo a polo que divide a Terra em oeste e este.'],['Polos','Pontos mais a norte (Polo Norte) e mais a sul (Polo Sul) da Terra.'],['Círculos polares','Linhas perto dos polos: ártico (norte) e antártico (sul).']],
+   p:'O GPS do telemóvel e os pilotos de avião usam estas linhas para indicar exatamente onde estão.',
+   e:['«As linhas veem-se do espaço ou no chão.» Não se veem: são imaginárias, como as linhas de um campo de futebol desenhadas só no papel do treinador.','«O Equador e Greenwich são iguais, um deitado e outro em pé.» O Equador dá a volta completa à Terra; o meridiano vai só de um polo ao outro.']},
+  ex:[{type:'match',q:'Liga cada descrição à linha ou ponto correto (observa o documento 2).',rows:['Divide a Terra em hemisfério norte e hemisfério sul','Vai do Polo Norte ao Polo Sul e passa em Inglaterra','Linha perto do Polo Norte','Ponto mais a sul da Terra'],cols:[{h:'Linha / ponto',opts:['Equador','Meridiano de Greenwich','Círculo polar ártico','Polo Sul','Círculo polar antártico'],a:[0,1,2,3]}],exp:'O Equador separa norte e sul; Greenwich separa oeste e este; o círculo polar ártico fica junto ao Polo Norte.'},
+      {type:'mc',q:'O Equador divide a Terra em…',opts:['hemisfério norte e hemisfério sul','hemisfério ocidental e hemisfério oriental','Europa e África'],a:0,mis:{1:'lin-troca'},exp:'Equador → norte e sul. Meridiano de Greenwich → ocidental (oeste) e oriental (este).'}]},
+ {id:'c3',concept:'ori',title:'Portugal no mapa da Europa',doc:{k:'europa',cap:'Doc. 2 – A Península Ibérica na Europa'},
+  lesson:{c:'Num mapa, o Norte fica em cima: procura a seta com a letra N. Portugal fica na <b>Península Ibérica</b>, no extremo sudoeste da Europa. Uma <b>península</b> é uma porção de terra rodeada de água por quase todos os lados, menos um, por onde se liga ao continente.',
+   t:[['Península','Terra rodeada de água por todos os lados menos um.'],['Oceano Atlântico','O oceano que banha toda a costa de Portugal.'],['Título','Frase que diz o que o mapa representa.']],
+   p:'Para encontrares Portugal num mapa da Europa, olha para o canto de baixo, à esquerda. É uma estreita faixa junto ao Atlântico, ao lado de Espanha.',
+   e:['«Portugal e a Península Ibérica são a mesma coisa.» A Península inclui Portugal, Espanha, Andorra e Gibraltar.','«O Mar Mediterrâneo banha Portugal.» Não: a costa portuguesa é toda atlântica.']},
+  ex:[{type:'mc',concept:'map',q:'Qual seria o melhor <b>título</b> para este mapa?',opts:['A Península Ibérica na Europa','Os rios de Portugal','O relevo de Espanha'],a:0,exp:'O título diz o que o mapa mostra: aqui vemos a Europa e a Península Ibérica destacada.'},
+      {type:'hotspot',q:'Assinala <b>Portugal</b>: clica em cima dele no mapa.',k:'europa',zones:[{x:10,y:57.5,w:6,h:12}],exp:'Portugal é a faixa cor de laranja no lado oeste da Península Ibérica.'},
+      {type:'hotspot',q:'Agora clica na <b>Península Ibérica</b>.',k:'europa',zones:[{x:10,y:55,w:19,h:20}],exp:'A Península Ibérica é a mancha verde-escura no sudoeste da Europa. Inclui Portugal e Espanha.'},
+      {type:'mc',q:'Qual é o oceano que fica <b>mais perto</b> de Portugal?',opts:['Oceano Atlântico','Mar Mediterrâneo','Mar Negro'],a:0,mis:{1:'pt-mediterraneo'},exp:'O Oceano Atlântico banha toda a costa portuguesa.'}]},
+ {id:'c4',concept:'rel',title:'Montanhas e planícies',
+  lesson:{c:'O <b>relevo</b> são as formas da superfície da Terra. Uma <b>montanha</b> é um terreno alto, com encostas inclinadas. Uma <b>planície</b> é um terreno plano e de baixa altitude.',
+   t:[['Relevo','Conjunto das formas da superfície terrestre.'],['Altitude','Altura de um lugar em relação ao nível do mar.'],['Montanha','Elevação alta com encostas inclinadas.'],['Planície','Terreno plano e baixo.']],
+   p:'Nas planícies é mais fácil cultivar e construir cidades e estradas. Nas montanhas há florestas, pastorícia e, na Serra da Estrela, até neve no inverno.',
+   e:['«Qualquer terreno plano é uma planície.» Se for plano mas alto, chama-se planalto. Vais aprender isto no Nível B.']},
+  ex:[{type:'imglabel',q:'Escreve por baixo de cada imagem o nome da forma de relevo.',imgs:[{k:'planicie',a:1},{k:'montanha',a:0}],opts:['Montanha','Planície'],exp:'A primeira imagem mostra um terreno plano e baixo (planície); a segunda, um terreno alto e inclinado (montanha).'}]},
+ {id:'c5',concept:'zon',title:'As zonas climáticas',doc:null,
+  lesson:{c:'Como a Terra é redonda, os raios do Sol não chegam a todo o lado da mesma maneira. Junto ao Equador chegam mais direitos: é a <b>zona quente</b>. Perto dos polos chegam muito inclinados: são as <b>zonas frias</b>. Entre elas ficam as <b>zonas temperadas</b>. Portugal fica na <b>zona temperada do Norte</b>.',
+   t:[['Zona quente (intertropical)','Faixa junto ao Equador, quente todo o ano.'],['Zona temperada do Norte','Faixa do hemisfério norte com quatro estações bem marcadas.'],['Zonas frias','Faixas junto aos polos, frias todo o ano.']],
+   p:'É por vivermos numa zona temperada que temos primavera, verão, outono e inverno bem diferentes.',
+   e:['«A zona temperada do Sul é o sul de Portugal.» Não: fica no hemisfério sul, onde estão, por exemplo, a Argentina e a África do Sul.']},
+  ex:[{type:'hotspot',q:'Pinta (clica) a zona onde se localizam Portugal e a Península Ibérica.',k:'zonas',crop:62,zones:[{x:4,y:15,w:60,h:28},{x:8,y:6,w:14,h:12},{x:50,y:6,w:13,h:12}],exp:'Portugal fica na faixa entre a zona fria do Norte e a zona quente.'},
+      {type:'mc',q:'Como se chama a zona climática onde fica Portugal?',opts:['Zona temperada do Norte','Zona temperada do Sul','Zona quente'],a:0,mis:{1:'temperada-sul'},exp:'Portugal está no hemisfério norte, entre a zona quente e a zona fria do Norte.'}]},
+ {id:'c6',concept:'rio',title:'Os grandes rios',doc:{k:'rios',cap:'Doc. 3 – Rios de Portugal'},
+  lesson:{c:'Os quatro maiores <b>rios luso-espanhóis</b> nascem em Espanha e atravessam Portugal: <b>Minho, Douro, Tejo e Guadiana</b>. Os <b>rios nacionais</b> nascem e desaguam em Portugal, como o Mondego, o Vouga e o Sado.',
+   t:[['Nascente','Local onde o rio começa.'],['Foz','Local onde o rio termina, no mar ou noutro rio.'],['Rio luso-espanhol','Rio que passa em Portugal e em Espanha.'],['Rio nacional','Rio que corre só em Portugal.']],
+   p:'O Barreiro fica na margem sul do estuário do Tejo, a parte larga do rio junto à foz.',
+   e:['«O Tejo é um rio português.» Corre em Portugal, mas nasce em Espanha: é luso-espanhol.','«O Ebro passa em Portugal.» O Ebro corre só em Espanha.']},
+  ex:[{type:'multi',q:'Seleciona os <b>quatro</b> maiores rios luso-espanhóis.',opts:['Minho','Lima','Douro','Mondego','Tejo','Sado','Guadiana','Ebro'],a:[0,2,4,6],mis:{3:'rio-nacional',5:'rio-nacional',7:'ebro'},exp:'Minho, Douro, Tejo e Guadiana nascem em Espanha e passam em Portugal. O Mondego e o Sado são nacionais; o Ebro é só espanhol.'}]}
+ ],
+ recap:{points:['O globo é a representação mais parecida com a Terra; o planisfério é plano e deforma-a.','O Equador divide a Terra em norte e sul; o Meridiano de Greenwich divide-a em oeste e este.','Portugal fica na Península Ibérica, no sudoeste da Europa, e é banhado pelo Oceano Atlântico.','Montanha: alta e inclinada. Planície: plana e baixa.','Portugal está na zona temperada do Norte.','Minho, Douro, Tejo e Guadiana são os grandes rios luso-espanhóis.'],
+  quiz:[{type:'mc',concept:'rep',q:'Qual destas representações é uma esfera?',opts:['Globo terrestre','Planisfério','Planta da escola'],a:0,exp:'O globo é a única representação esférica.'},
+   {type:'mc',concept:'lin',q:'Que linha vai do Polo Norte ao Polo Sul?',opts:['Meridiano de Greenwich','Equador','Círculo polar ártico'],a:0,mis:{1:'lin-troca'},exp:'Os meridianos ligam os dois polos.'},
+   {type:'mc',concept:'rel',q:'Um terreno plano, junto ao mar, a 10 metros de altitude, é uma…',opts:['planície','montanha','serra'],a:0,exp:'Plano e baixo = planície.'},
+   {type:'mc',concept:'rio',q:'Qual destes rios é luso-espanhol?',opts:['Douro','Mondego','Sado'],a:0,mis:{1:'rio-nacional',2:'rio-nacional'},exp:'O Douro nasce em Espanha.'}]}},
+
+B:{modules:[
+ {id:'b1',concept:'rep',title:'Quatro maneiras de ver a Terra',docs:[{k:'planisferio',cap:'A'},{k:'satelite',cap:'B'},{k:'aerea',cap:'C'},{k:'globo',cap:'D'}],docsCap:'Doc. 1 – Formas de representação da Terra',
+  lesson:{c:'Além do globo e do planisfério, usamos imagens tiradas do ar. A <b>fotografia aérea</b> é tirada de um avião ou drone e mostra uma área pequena com muito pormenor (ruas, casas). A <b>imagem de satélite</b> é captada do Espaço e mostra áreas enormes, incluindo as nuvens.',
+   t:[['Fotografia aérea','Imagem de parte da Terra captada de um avião ou drone.'],['Imagem de satélite','Imagem da Terra captada a partir do Espaço por um satélite artificial.'],['Satélite artificial','Aparelho que gira à volta da Terra e recolhe imagens e dados.']],
+   p:'A previsão do tempo usa imagens de satélite para ver as nuvens a chegar. As câmaras municipais usam fotografias aéreas para planear ruas e jardins.',
+   e:['«Imagem de satélite e fotografia aérea são a mesma coisa.» Diferem na altura de onde são captadas e na área que mostram.']},
+  ex:[{type:'match',q:'Completa o quadro: para cada afirmação, escolhe a letra da imagem e o conceito.',rows:['Representação da Terra que mais se aproxima da realidade.','Representação da totalidade da Terra numa superfície plana.','Imagem de parte da Terra captada por um drone.','Representação da Terra captada a partir do Espaço.'],cols:[{h:'Imagem',opts:['A','B','C','D'],a:[3,0,2,1]},{h:'Conceito',opts:['Globo terrestre','Planisfério','Fotografia aérea','Imagem de satélite'],a:[0,1,2,3]}],mis:{any:'rep-satelite'},exp:'D – globo; A – planisfério; C – fotografia aérea (drone); B – imagem de satélite (Espaço).'}]},
+ {id:'b2',concept:'lin',title:'A legenda completa das linhas imaginárias',doc:{k:'linhas',cap:'Doc. 2 – Linhas imaginárias do globo'},
+  lesson:{c:'As linhas horizontais chamam-se <b>paralelos</b>; o maior é o Equador. Acima dele fica o <b>Trópico de Câncer</b> e abaixo o <b>Trópico de Capricórnio</b>. Junto aos polos ficam os <b>círculos polares</b>. As linhas que vão de polo a polo chamam-se <b>meridianos</b>; o mais importante é o de Greenwich.',
+   t:[['Paralelo','Linha imaginária paralela ao Equador.'],['Meridiano','Semicírculo imaginário que une os dois polos.'],['Trópico de Câncer','Paralelo do hemisfério norte que limita a zona quente.'],['Trópico de Capricórnio','Paralelo do hemisfério sul que limita a zona quente.']],
+   p:'O Trópico de Câncer passa no Sara e perto das Canárias; o de Capricórnio passa perto de São Paulo, no Brasil. Assim é fácil lembrar qual fica no norte.',
+   e:['Trocar os trópicos. Câncer fica no hemisfério norte, mais perto de nós; Capricórnio no hemisfério sul.','Trocar Polo Norte com círculo polar ártico: o polo é um ponto; o círculo é uma linha à volta dele.']},
+  ex:[{type:'match',q:'Completa a legenda do documento 2 com as palavras da chave.',rows:['A','B','C','D','1','2','3','4'],cols:[{h:'Legenda',opts:['Trópico de Câncer','Trópico de Capricórnio','Meridiano de Greenwich','Equador','Círculo Polar Ártico','Polo Sul','Polo Norte','Círculo Polar Antártico'],a:[0,1,2,3,4,5,6,7]}],mis:{any:'lin-troca'},exp:'A – Trópico de Câncer; B – Trópico de Capricórnio; C – Meridiano de Greenwich; D – Equador; 1 – Círculo Polar Ártico; 2 – Polo Sul; 3 – Polo Norte; 4 – Círculo Polar Antártico.'}]},
+ {id:'b3',concept:'map',title:'Elementos do mapa, escala e localização',doc:{k:'europa',cap:'Doc. 3 – A Península Ibérica na Europa'},
+  lesson:{c:'Um mapa completo tem cinco elementos essenciais: <b>título, orientação, escala, legenda e fonte</b>. A <b>escala</b> indica quantas vezes a realidade foi reduzida. Um mapa de <b>pequena escala</b> mostra uma área grande com pouco pormenor; um de <b>grande escala</b> mostra uma área pequena com muito pormenor. Para localizar, usamos os <b>pontos cardeais</b> (N, S, E, O) e <b>colaterais</b> (NE, NO, SE, SO).',
+   t:[['Escala gráfica','Barra que mostra a que distância real corresponde um segmento do mapa.'],['Orientação','Indicação do Norte (seta ou rosa-dos-ventos).'],['Rosa-dos-ventos','Figura com os pontos cardeais e colaterais.'],['Legenda','Explicação das cores e símbolos do mapa.']],
+   p:'Neste mapa, a barra de escala diz que cerca de 1 cm corresponde a 500 km. O mapa mostra um continente inteiro, por isso é de pequena escala.',
+   e:['«Pequena escala mostra coisas pequenas.» É ao contrário: mostra áreas grandes, mas com pouco pormenor.','«Existe um hemisfério central.» Só há hemisfério norte e sul (e ocidental e oriental).']},
+  ex:[{type:'multi',q:'Quais são os <b>três</b> elementos essenciais de um mapa presentes no documento 3?',opts:['Orientação (seta N e rosa-dos-ventos)','Escala (barra dos 500 km)','Título (no topo do documento)','Linha do Equador','Altitude dos países','Fotografia aérea'],a:[0,1,2],exp:'O documento tem orientação, escala e título. Os outros elementos essenciais são a legenda e a fonte.'},
+      {type:'mc',q:'Classifica o mapa do documento 3 quanto ao tipo de escala.',opts:['Pequena escala','Grande escala'],a:0,mis:{1:'escala'},exp:'Mostra um continente inteiro com pouco pormenor: pequena escala.'},
+      {type:'mc',concept:'ori',q:'Segundo o documento 3, em relação à Europa, a Península Ibérica localiza-se…',opts:['a sudoeste','a noroeste'],a:0,mis:{1:'colateral'},exp:'Está em baixo (Sul) e à esquerda (Oeste): sudoeste.'},
+      {type:'mc',concept:'lin',q:'A Europa localiza-se no hemisfério…',opts:['norte','central'],a:0,mis:{1:'hemisferio-central'},exp:'A Europa fica toda a norte do Equador.'},
+      {type:'mc',concept:'ori',q:'A Península Ibérica é banhada pelo oceano…',opts:['Atlântico','Índico'],a:0,exp:'O Atlântico banha a costa oeste e norte da Península; o Mediterrâneo (um mar) banha a costa leste e sul.'}]},
+ {id:'b4',concept:'rel',title:'O relevo da Península Ibérica',doc:{k:'relevo',cap:'Doc. 1 – Relevo da Península Ibérica'},
+  lesson:{c:'Num mapa de relevo, as cores indicam a altitude: tons claros para as zonas baixas e castanhos para as altas. No interior da Península fica a <b>Meseta Ibérica</b>, um enorme <b>planalto</b> (terreno alto e plano). À volta e no meio dela erguem-se <b>cordilheiras</b>: Cantábrica, Central, Ibérica e Bética. As planícies ficam sobretudo junto ao litoral e aos grandes rios.',
+   t:[['Planalto','Superfície plana a altitude elevada.'],['Meseta','Nome do grande planalto do centro da Península.'],['Cordilheira','Conjunto de montanhas em fila.'],['Serra','Conjunto de montanhas mais pequeno (ex.: Serra da Estrela).']],
+   p:'A Serra da Estrela, na Cordilheira Central, tem o ponto mais alto de Portugal continental (1993 m).',
+   e:['«O castanho escuro quer dizer terra seca.» Quer dizer altitude elevada: mais de 1000 m.','«O interior da Península é uma planície.» É um planalto, a Meseta.']},
+  ex:[{type:'mc',q:'Assinala a afirmação correta.',opts:['A Península Ibérica possui várias regiões montanhosas, como as cordilheiras e as mesetas.','O Sul da Península Ibérica é constituído, maioritariamente, por regiões montanhosas.','O litoral da Península Ibérica é constituído, maioritariamente, por regiões montanhosas.'],a:0,mis:{2:'hipsometria'},exp:'A Península tem muitas regiões elevadas. Atenção: a meseta é um planalto (alto e plano), não uma montanha; a frase da ficha junta-as como «regiões elevadas». O litoral é sobretudo de planícies.'}]},
+ {id:'b5',concept:'cli',title:'Climas e zonas climáticas',doc:{k:'climas',cap:'Doc. 2 – Climas da Península Ibérica'},
+  lesson:{c:'O <b>clima</b> é o conjunto das condições de temperatura e chuva de um lugar ao longo de muitos anos. Na Península há três climas: <b>temperado marítimo</b> (norte e noroeste, perto do oceano: chuva abundante e temperaturas amenas), <b>temperado continental</b> (interior: verões muito quentes e invernos muito frios) e <b>temperado mediterrâneo</b> (sul: pouca chuva, verão quente e inverno ameno).',
+   t:[['Clima','Condições médias de temperatura e precipitação durante muitos anos.'],['Estado do tempo','Condições da atmosfera num momento (hoje, amanhã).'],['Precipitação','Água que cai da atmosfera: chuva, neve, granizo.'],['Ameno','Nem muito quente nem muito frio.']],
+   p:'Em Lisboa e Faro o clima é mediterrâneo; em Madrid é continental; no Porto é marítimo.',
+   e:['«Clima é o tempo que faz hoje.» O tempo muda todos os dias; o clima é a média de muitos anos.','«Clima mediterrâneo só existe junto ao Mar Mediterrâneo.» Lisboa e Faro, no Atlântico, também o têm.']},
+  ex:[{type:'match',q:'Liga cada área climática à respetiva definição.',rows:['Clima temperado marítimo','Clima temperado continental','Clima temperado mediterrâneo'],cols:[{h:'Definição',opts:['Temperaturas altas no verão e amenas no inverno','Temperaturas amenas','Temperaturas muito altas no verão e muito baixas no inverno'],a:[1,2,0]}],mis:{any:'mar-clima'},exp:'Marítimo → temperaturas amenas; continental → muito altas no verão e muito baixas no inverno; mediterrâneo → altas no verão e amenas no inverno.'},
+      {type:'mc',concept:'zon',q:'Identifica a zona climática onde se situa a Península Ibérica (documento 3).',img:'zonas',opts:['Zona temperada do norte','Zona quente','Zona temperada do sul'],a:0,mis:{2:'temperada-sul'},exp:'A Península está no hemisfério norte, entre a zona quente e a zona fria do Norte.'},
+      {type:'match',concept:'zon',q:'Completa a legenda do documento 3.',img:'zonas',rows:['Caixa de cima (junto ao Polo Norte)','Caixa de baixo (junto ao Polo Sul)'],cols:[{h:'Zona',opts:['Zona fria do Norte','Zona fria do Sul','Zona quente','Zona temperada do Sul'],a:[0,1]}],exp:'Junto aos polos ficam as zonas frias: do Norte e do Sul.'}]},
+ {id:'b6',concept:'rio',title:'Rios da Península e das ilhas',doc:{k:'rios',cap:'Doc. 4 – Rios de Portugal'},
+  lesson:{c:'Os quatro grandes rios luso-espanhóis são o <b>Minho, Douro, Tejo e Guadiana</b>. O Minho e o Guadiana fazem, em parte, fronteira entre os dois países. Nos <b>Açores e na Madeira</b>, as ilhas são pequenas e montanhosas, por isso não há rios: há <b>ribeiras</b>, <b>lagoas</b> (nas crateras de vulcões, nos Açores) e <b>levadas</b>.',
+   t:[['Ribeira','Pequeno curso de água, muitas vezes com pouca água no verão.'],['Lagoa','Massa de água parada, menor do que um lago.'],['Levada','Canal construído pelas pessoas para levar água de rega, típico da Madeira.'],['Estuário','Foz larga de um rio, onde a água doce se mistura com a do mar.']],
+   p:'Junto ao Barreiro, o Tejo forma um estuário. Ali desagua também o rio Coina, um rio nacional.',
+   e:['«As ilhas têm rios.» Têm ribeiras: as ilhas são pequenas e a água corre depressa para o mar.','«As levadas são naturais.» Foram construídas pelas pessoas.']},
+  ex:[{type:'multi',q:'Assinala os <b>quatro</b> rios luso-espanhóis.',opts:['Minho','Guadiana','Vouga','Tejo','Douro','Cávado','Sado','Mira'],a:[0,1,3,4],mis:{2:'rio-nacional',5:'rio-nacional',6:'rio-nacional',7:'rio-nacional'},exp:'Minho, Douro, Tejo e Guadiana. Vouga, Cávado, Sado e Mira são rios nacionais.'},
+      {type:'reflect',q:'Identifica o rio nacional que se situa mais próximo da tua localidade (pode não estar no mapa).',exp:'A resposta depende de onde vives. No Barreiro, o grande rio é o Tejo (luso-espanhol), e o rio nacional mais próximo é o Coina, que desagua no estuário do Tejo. Perto de Setúbal fica o Sado.'},
+      {type:'multi',q:'Assinala os cursos de água existentes nos arquipélagos dos Açores e da Madeira.',opts:['Ribeiras','Levadas','Rios','Mares','Lagoas','Rias'],a:[0,1,4],mis:{2:'ilhas-rios'},exp:'Ribeiras, lagoas e levadas. As levadas são canais artificiais, construídos para levar água.'}]},
+ {id:'b7',concept:'veg',title:'Ibéria Húmida e Ibéria Seca',doc:{k:'vegetacao',cap:'Doc. 5 – Ibéria Húmida e Ibéria Seca'},
+  lesson:{c:'A vegetação natural depende do clima. A <b>Ibéria Húmida</b> ocupa o Norte e o Noroeste, onde chove muito: predominam árvores de <b>folha caduca</b> (carvalho, castanheiro), que perdem as folhas no outono. A <b>Ibéria Seca</b> ocupa o Centro e o Sul, onde chove pouco: predominam árvores de <b>folha persistente</b> (sobreiro, azinheira, oliveira), com folhas pequenas e duras que poupam água.',
+   t:[['Folha caduca','Folha que cai toda no outono.'],['Folha persistente','Folha que se mantém todo o ano e se renova aos poucos.'],['Vegetação natural','Plantas que crescem sem ser semeadas pelas pessoas.']],
+   p:'Os montados de sobreiro do Alentejo, de onde vem a cortiça, são típicos da Ibéria Seca.',
+   e:['«Folha persistente nunca cai.» Cai, mas aos poucos: a árvore nunca fica despida.','«Ibéria Seca é um deserto.» Chove pouco, mas há florestas e campos.']},
+  ex:[{type:'tf',q:'Classifica em verdadeiras (V) ou falsas (F) as afirmações.',items:[{t:'A Ibéria Húmida abrange o Sul e o Sudoeste da Península.',v:false},{t:'Na Ibéria Húmida predomina a vegetação natural de folha caduca.',v:true},{t:'A Ibéria Seca abrange o Centro e o Sul da Península.',v:true}],mis:{any:'caduca'},exp:'A Ibéria Húmida abrange o Norte e o Noroeste. As outras duas afirmações são verdadeiras.'}]}
+ ],
+ recap:{points:['Fotografia aérea: tirada de avião ou drone. Imagem de satélite: captada do Espaço.','Trópico de Câncer no norte, de Capricórnio no sul; círculos polares junto aos polos.','Cinco elementos do mapa: título, orientação, escala, legenda e fonte.','Pequena escala = área grande, pouco pormenor.','A Meseta é um planalto; as cordilheiras são conjuntos de montanhas.','Três climas: marítimo (ameno, chuvoso), continental (extremos), mediterrâneo (verão quente e seco).','Ilhas: ribeiras, lagoas e levadas. Húmida → folha caduca; Seca → folha persistente.'],
+  quiz:[{type:'mc',concept:'map',q:'Uma planta da tua escola, com todas as salas, é um mapa de…',opts:['grande escala','pequena escala'],a:0,mis:{1:'escala'},exp:'Área pequena com muito pormenor = grande escala.'},
+   {type:'mc',concept:'lin',q:'Que linha fica entre o Equador e o círculo polar ártico?',opts:['Trópico de Câncer','Trópico de Capricórnio','Círculo polar antártico'],a:0,exp:'Câncer fica no hemisfério norte.'},
+   {type:'mc',concept:'cli',q:'Madrid tem verões muito quentes e invernos muito frios. Que clima é este?',opts:['Temperado continental','Temperado marítimo','Temperado mediterrâneo'],a:0,mis:{1:'mar-clima'},exp:'O interior, longe do mar, tem temperaturas extremas.'},
+   {type:'mc',concept:'veg',q:'O castanheiro perde as folhas no outono. A sua folha é…',opts:['caduca','persistente'],a:0,mis:{1:'caduca'},exp:'Caduca = cai.'}]}},
+
+A:{modules:[
+ {id:'a1',concept:'rep',title:'Representações da Terra: vantagens e limites',docs:[{k:'planisferio',cap:'A'},{k:'satelite',cap:'B'},{k:'aerea',cap:'C'},{k:'globo',cap:'D'}],docsCap:'Doc. 1 – Formas de representação da Terra',
+  lesson:{c:'Cada representação tem vantagens e limites. O globo mantém as formas e as áreas, mas não mostra pormenor e não se leva no bolso. O planisfério mostra o mundo inteiro de uma vez, mas resulta de uma <b>projeção cartográfica</b>: ao passar a esfera para o plano, há sempre deformações. As imagens de satélite e as fotografias aéreas mostram a realidade como ela é num certo momento.',
+   t:[['Projeção cartográfica','Método para passar a superfície esférica da Terra para um plano.'],['Deformação','Alteração das formas, áreas ou distâncias num mapa.'],['Deteção remota','Recolha de informação à distância, por exemplo com satélites.']],
+   p:'Na projeção mais usada nos planisférios escolares, os países perto dos polos parecem maiores do que são: a Gronelândia parece do tamanho de África, mas África é cerca de 14 vezes maior.',
+   e:['«Uma imagem de satélite é um mapa.» Não tem título, legenda nem escala: é uma imagem. Os mapas são construídos a partir dela.','«Uma fotografia aérea só pode ser tirada por um drone.» Também pode ser tirada de um avião ou helicóptero.']},
+  ex:[{type:'match',q:'Completa o quadro: para cada afirmação, escreve a letra da imagem e o conceito correspondente (sem chave).',rows:['Representação da Terra que mais se aproxima da realidade.','Representação da totalidade da Terra numa superfície plana.','Imagem de parte da Terra captada por um drone.','Representação da Terra captada a partir do Espaço.'],cols:[{h:'Imagem',opts:['A','B','C','D'],a:[3,0,2,1]},{h:'Conceito',opts:['Planta','Globo terrestre','Mapa de relevo','Planisfério','Fotografia aérea','Imagem de satélite'],a:[1,3,4,5]}],mis:{any:'rep-satelite'},exp:'D – Globo terrestre; A – Planisfério; C – Fotografia aérea; B – Imagem de satélite.'},
+      {type:'text',q:'Explica, por palavras tuas, porque é que o planisfério deforma a realidade.',groups:[['plan','achat','folha','papel','superficie plana'],['esfer','redond','curv','bola','globo']],need:2,model:'Porque a Terra é esférica (redonda) e o planisfério é plano: ao passar a esfera para uma folha, as formas e as áreas ficam deformadas.',mis:{fail:'planisferio'},exp:'A ideia-chave junta duas coisas: a Terra é redonda e o planisfério é plano.'}]},
+ {id:'a2',concept:'lin',title:'Linhas imaginárias e o que limitam',doc:{k:'linhas',cap:'Doc. 2 – Linhas imaginárias do globo'},
+  lesson:{c:'Os paralelos e os meridianos formam uma rede que permite dar a <b>localização absoluta</b> de qualquer lugar, com as <b>coordenadas geográficas</b>: a latitude (distância ao Equador) e a longitude (distância a Greenwich). Os trópicos e os círculos polares são também os limites das zonas climáticas.',
+   t:[['Latitude','Distância de um lugar ao Equador, medida em graus (N ou S).'],['Longitude','Distância de um lugar ao Meridiano de Greenwich, medida em graus (E ou O).'],['Hemisfério ocidental','Metade da Terra a oeste de Greenwich.'],['Coordenadas geográficas','Par latitude/longitude que localiza um ponto.']],
+   p:'Portugal continental fica no hemisfério norte e no hemisfério ocidental: está todo a oeste do Meridiano de Greenwich.',
+   e:['«Os trópicos estão nos polos.» Ficam perto do Equador e limitam a zona quente.','«Greenwich é o meridiano de Portugal.» Passa em Londres; Portugal fica a oeste dele.']},
+  ex:[{type:'match',q:'Legenda o documento 2 (há opções a mais).',rows:['A','B','C','D','1','2','3','4'],cols:[{h:'Legenda',opts:['Equador','Trópico de Câncer','Trópico de Capricórnio','Meridiano de Greenwich','Polo Norte','Polo Sul','Círculo Polar Ártico','Círculo Polar Antártico','Meridiano de Lisboa','Paralelo de Portugal'],a:[1,2,3,0,6,5,4,7]}],mis:{any:'lin-troca'},exp:'A – Trópico de Câncer; B – Trópico de Capricórnio; C – Meridiano de Greenwich; D – Equador; 1 – Círculo Polar Ártico; 2 – Polo Sul; 3 – Polo Norte; 4 – Círculo Polar Antártico.'},
+      {type:'mc',concept:'zon',q:'Que linhas limitam a zona quente ou intertropical?',opts:['Trópico de Câncer e Trópico de Capricórnio','Círculo polar ártico e círculo polar antártico','Equador e Meridiano de Greenwich'],a:0,exp:'A zona quente fica entre os dois trópicos, daí o nome «intertropical».'}]},
+ {id:'a3',concept:'map',title:'Ler um mapa como um geógrafo',doc:{k:'europa',cap:'Doc. 3 – A Península Ibérica na Europa'},
+  lesson:{c:'A escala pode ser <b>gráfica</b> (uma barra) ou <b>numérica</b> (por exemplo, 1:1 000 000, que quer dizer que 1 cm no mapa são 1 000 000 cm, ou seja 10 km, na realidade). Quanto maior o número depois dos dois pontos, menor é a escala. A <b>localização relativa</b> descreve um lugar em relação a outro (a PI fica a sudoeste da Europa); a <b>localização absoluta</b> usa coordenadas.',
+   t:[['Escala numérica','Fração que indica a redução: 1:50 000, 1:5 000 000…'],['Localização relativa','Posição de um lugar em relação a outros.'],['Localização absoluta','Posição exata dada por coordenadas geográficas.'],['Fonte','Indicação de onde vem a informação do mapa.']],
+   p:'Para saber a distância de Lisboa a Madrid num mapa, medes com a régua e comparas com a barra de escala: cerca de 1 cm para 100 km num mapa da Península dá perto de 500 km.',
+   e:['«1:5 000 000 é uma escala maior do que 1:50 000 porque o número é maior.» É o contrário: quanto mais se reduz, menor é a escala.','Confundir sudeste com sudoeste: lê sempre primeiro Norte/Sul.']},
+  ex:[{type:'text',q:'Indica três dos cinco elementos essenciais de um mapa, com base no documento 3.',groups:[['titulo'],['orientac','rosa','seta','norte'],['escala'],['legenda'],['fonte']],need:3,model:'Três dos cinco elementos essenciais de um mapa presentes no documento 3 são a orientação, a escala e o título.',exp:'Os cinco elementos são título, orientação, escala, legenda e fonte. No documento 3 vê-se a orientação e a escala, e o título está no topo do documento.'},
+      {type:'text',q:'Classifica o mapa representado no documento 3 quanto ao tipo de escala.',groups:[['pequena']],need:1,forbid:['grande escala'],model:'O mapa representado no documento 3 é um mapa de pequena escala.',mis:{fail:'escala'},exp:'Representa um continente (área grande) com pouco pormenor.'},
+      {type:'mc',concept:'ori',q:'Segundo o documento 3, em relação à Europa, a Península Ibérica localiza-se…',opts:['a sudeste','a sudoeste','a noroeste'],a:1,mis:{0:'colateral',2:'colateral'},exp:'Sul + Oeste = sudoeste.'},
+      {type:'mc',concept:'lin',q:'A Europa localiza-se no hemisfério…',opts:['norte','sul','central'],a:0,mis:{2:'hemisferio-central'},exp:'Toda a Europa fica a norte do Equador.'},
+      {type:'mc',concept:'ori',q:'A Península Ibérica é banhada pelo oceano…',opts:['Pacífico','Atlântico','Índico'],a:1,exp:'Atlântico, a oeste e a norte.'}]},
+ {id:'a4',concept:'rel',title:'Relevo: montanha, planalto e planície',doc:{k:'relevo',cap:'Doc. 1 – Relevo da Península Ibérica'},
+  lesson:{c:'Distinguir as três formas principais: <b>montanha</b> (alta e com declives acentuados), <b>planalto</b> (alto e plano) e <b>planície</b> (baixa e plana). O relevo da Península organiza-se à volta da Meseta, rodeada de cordilheiras. Portugal tem o relevo mais alto a norte do Tejo e mais baixo a sul.',
+   t:[['Declive','Inclinação do terreno.'],['Mapa hipsométrico','Mapa que usa cores para mostrar as altitudes.'],['Vale','Terreno mais baixo entre elevações, muitas vezes com um rio.']],
+   p:'O ponto mais alto de Portugal é a montanha do Pico, nos Açores (2351 m). No continente é a Serra da Estrela (1993 m).',
+   e:['«Planalto e planície são a mesma coisa.» Ambos são planos; a diferença está na altitude.','«O interior da Península é feito de planícies.» É ocupado pela Meseta, um planalto.']},
+  ex:[{type:'mc',q:'Assinala a afirmação correta.',opts:['A Península Ibérica possui várias regiões montanhosas, como as cordilheiras e as mesetas.','O Sul da Península Ibérica é constituído, maioritariamente, por regiões montanhosas.','O litoral da Península Ibérica é constituído, maioritariamente, por regiões montanhosas.','O interior da Península é constituído, maioritariamente, por planícies.'],a:0,mis:{3:'meseta',2:'hipsometria'},exp:'O interior é ocupado pela Meseta (planalto); o litoral e o sul têm sobretudo planícies.'},
+      {type:'text',q:'Que forma de relevo é a Meseta Ibérica? Justifica.',groups:[['planalto'],['alt','elevad'],['plan']],need:2,forbid:['planicie','e uma montanha'],model:'A Meseta Ibérica é um planalto, porque é uma superfície plana situada a uma altitude elevada.',mis:{fail:'meseta'},exp:'Planalto = plano + alto.'}]},
+ {id:'a5',concept:'cli',title:'Clima: o que o explica',doc:{k:'climas',cap:'Doc. 2 – Climas da Península Ibérica'},
+  lesson:{c:'O clima de um lugar depende de vários <b>fatores</b>: a <b>latitude</b> (distância ao Equador), a <b>proximidade do mar</b> (o oceano aquece e arrefece devagar e suaviza as temperaturas) e o <b>relevo</b> (as montanhas fazem chover mais de um lado e travam a influência do mar). Na Península, a latitude explica que todo o território seja temperado; o mar e o relevo explicam as diferenças entre marítimo, continental e mediterrâneo.',
+   t:[['Fator climático','Causa que influencia o clima de um lugar.'],['Amplitude térmica','Diferença entre a temperatura mais alta e a mais baixa.'],['Continentalidade','Efeito da distância ao mar: mais longe, maior amplitude térmica.']],
+   p:'O Porto e Madrid ficam quase à mesma latitude, mas Madrid, longe do mar e a mais de 600 m de altitude, tem invernos bem mais frios.',
+   e:['Descrever os climas só com temperaturas. A chuva também conta: o marítimo tem chuva abundante; o mediterrâneo tem pouca.','«O mar aquece o litoral.» No verão até o refresca; o que faz é suavizar as temperaturas todo o ano.']},
+  ex:[{type:'match',q:'Associa cada área climática à respetiva definição (há uma definição a mais).',rows:['Clima temperado marítimo','Clima temperado continental','Clima temperado mediterrâneo'],cols:[{h:'Definição',opts:['Temperaturas altas no verão e amenas no inverno','Temperaturas amenas','Temperaturas muito altas no verão e muito baixas no inverno','Temperaturas baixas durante todo o ano'],a:[1,2,0]}],mis:{any:'mar-clima'},exp:'Marítimo → amenas; continental → extremos; mediterrâneo → verão quente e inverno ameno.'},
+      {type:'text',concept:'zon',q:'Identifica a zona climática onde se situa a Península Ibérica, a partir do documento 3.',img:'zonas',groups:[['temperada'],['norte']],need:2,forbid:['sul','quente'],model:'A Península Ibérica localiza-se na Zona Temperada do Norte.',mis:{fail:'temperada-sul'},exp:'Zona temperada do Norte: hemisfério norte, entre o Trópico de Câncer e o círculo polar ártico.'},
+      {type:'text',concept:'zon',q:'Completa a legenda do documento 3: que nome têm as zonas das duas caixas?',img:'zonas',groups:[['fria','glacial','polar'],['norte','artic'],['sul','antartic']],need:3,model:'Caixa de cima: zona fria do Norte. Caixa de baixo: zona fria do Sul.',exp:'Junto aos polos ficam as zonas frias (também chamadas glaciais ou polares) do Norte e do Sul.'}]},
+ {id:'a6',concept:'rio',title:'Rede hidrográfica',doc:{k:'rios',cap:'Doc. 4 – Rios de Portugal'},
+  lesson:{c:'Um rio nasce na <b>nascente</b>, recebe <b>afluentes</b> e termina na <b>foz</b>. O conjunto de terras cujas águas correm para o mesmo rio é a sua <b>bacia hidrográfica</b>. Um rio é luso-espanhol quando a sua bacia se reparte por Portugal e Espanha.',
+   t:[['Afluente','Rio que desagua noutro rio (o Zêzere é afluente do Tejo).'],['Bacia hidrográfica','Área drenada por um rio e pelos seus afluentes.'],['Margem','Cada um dos lados do rio (direita e esquerda, no sentido da corrente).']],
+   p:'O Zêzere é o maior afluente português do Tejo. O Mondego é o maior rio inteiramente português.',
+   e:['«Os quatro rios luso-espanhóis são os únicos que nascem em Espanha.» São os quatro principais; o Lima e o Tâmega, por exemplo, também nascem na Galiza.','Chamar «rio» a uma ribeira das ilhas.']},
+  ex:[{type:'text',q:'Identifica os quatro rios luso-espanhóis.',anyOf:['minho','douro','tejo','guadiana'],need:4,model:'Os quatro rios luso-espanhóis são: o rio Minho, o rio Douro, o rio Tejo e o rio Guadiana.',mis:{fail:'rio-nacional'},exp:'Minho, Douro, Tejo e Guadiana (de norte para sul).'},
+      {type:'text',q:'Identifica dois rios nacionais que se situam no Norte.',anyOf:['cavado','ave','neiva','leca'],need:2,model:'Os dois rios nacionais mais a norte são o Cávado e o Ave.',exp:'No mapa, a norte do Douro, os rios nacionais são o Cávado e o Ave. O Lima nasce em Espanha, por isso não conta.'},
+      {type:'text',q:'Nomeia os cursos de água existentes nos arquipélagos dos Açores e da Madeira.',anyOf:['ribeira','lagoa','levada'],need:3,forbid:['rios'],model:'Ribeiras, lagoas e levadas.',mis:{fail:'ilhas-rios'},exp:'Ribeiras, lagoas (sobretudo nos Açores) e levadas (canais artificiais da Madeira).'}]},
+ {id:'a7',concept:'veg',title:'Vegetação e clima',doc:{k:'vegetacao',cap:'Doc. 5 – Ibéria Húmida e Ibéria Seca'},
+  lesson:{c:'A divisão em Ibéria Húmida e Ibéria Seca segue a quantidade de chuva. As plantas <b>adaptam-se</b>: na Ibéria Seca, as folhas pequenas, duras e com cera de sobreiros e azinheiras perdem menos água no verão seco. Nas montanhas, a altitude cria ilhas de vegetação diferente, mesmo no sul.',
+   t:[['Adaptação','Característica que ajuda um ser vivo a viver num ambiente.'],['Montado','Paisagem de sobreiros e azinheiras espaçados, típica do Alentejo.'],['Floresta caducifólia','Floresta de árvores de folha caduca.']],
+   p:'Portugal é o maior produtor mundial de cortiça, que vem do sobreiro, árvore de folha persistente da Ibéria Seca.',
+   e:['«Na Ibéria Seca não há árvores.» Há montados, pinhais e matos.','Trocar as regiões: a Húmida é Norte e Noroeste; a Seca é Centro e Sul.']},
+  ex:[{type:'tffix',q:'Classifica em verdadeiras (V) ou falsas (F) e corrige as falsas.',items:[{t:'A Ibéria Húmida abrange o Sul e o Sudoeste da Península.',v:false,fix:[['norte','noroeste']],model:'A Ibéria Húmida abrange o Norte e o Noroeste da Península.'},{t:'Na Ibéria Seca predomina a vegetação natural de folha caduca.',v:false,fix:[['persistent']],model:'Na Ibéria Seca predomina a vegetação natural de folha persistente.'},{t:'Na Ibéria Húmida predomina a vegetação natural de folha caduca.',v:true},{t:'A Ibéria Seca abrange o Centro e o Sul da Península.',v:true}],mis:{any:'caduca'},exp:'Falsas: a 1.ª (é Norte e Noroeste) e a 2.ª (é folha persistente).'}]}
+ ],
+ recap:{points:['O planisfério resulta de uma projeção e tem sempre deformações.','Latitude e longitude dão a localização absoluta; os trópicos e os círculos polares limitam as zonas climáticas.','Escala numérica: quanto maior o denominador, menor a escala.','Montanha (alta, inclinada), planalto (alto, plano), planície (baixa, plana).','Fatores do clima: latitude, proximidade do mar e relevo.','Bacia hidrográfica, afluente, foz; os quatro principais rios luso-espanhóis.','As plantas adaptam-se ao clima: folhas persistentes poupam água.'],
+  quiz:[{type:'mc',concept:'map',q:'Qual destas escalas é a maior (mostra mais pormenor)?',opts:['1:5 000','1:500 000','1:5 000 000'],a:0,mis:{2:'escala'},exp:'Quanto menor o denominador, maior a escala.'},
+   {type:'mc',concept:'lin',q:'Portugal continental situa-se nos hemisférios…',opts:['norte e ocidental','norte e oriental','sul e ocidental'],a:0,mis:{1:'lin-troca'},exp:'Fica a norte do Equador e a oeste de Greenwich.'},
+   {type:'mc',concept:'cli',q:'Porque é que o litoral tem temperaturas mais amenas do que o interior?',opts:['Porque o oceano aquece e arrefece devagar','Porque no litoral há mais rios','Porque o litoral está mais perto do Equador'],a:0,mis:{1:'mar-clima',2:'mar-clima'},exp:'O mar funciona como um regulador de temperatura.'},
+   {type:'mc',concept:'rel',q:'Uma superfície plana a 700 m de altitude é…',opts:['um planalto','uma planície','uma cordilheira'],a:0,mis:{1:'meseta'},exp:'Plano e alto = planalto.'}]}}
+};
+
+/* ============ LABORATÓRIO (conceitos difíceis) ============ */
+const LAB = [
+ {id:'escala',concept:'map',title:'A escala',hook:'Porque é que um mapa da Europa é de «pequena» escala, se mostra tanta coisa?',steps:[
+  {t:'O que é a escala?',txt:'Um mapa é a Terra «encolhida» muitas vezes. A <b>escala</b> diz-nos quantas vezes. Numa escala gráfica, uma barra mostra a que distância real corresponde um pedaço do mapa.',ana:'É como uma fotocópia reduzida: se reduzires um desenho para metade, cada centímetro da cópia vale dois do original.',exm:'No mapa da Europa do documento 3, a barra diz que cerca de 1 cm são 500 km.',
+   chk:{q:'No mapa, 1 cm = 500 km. Quantos quilómetros são 2 cm?',opts:['1000 km','250 km','502 km'],a:0,exp:'2 × 500 km = 1000 km.'},
+   alt:{txt:'Pensa numa régua em que cada centímetro é um «salto» de 500 km. Dois centímetros são dois saltos: 500 + 500.',chk:{q:'Se 1 cm = 100 km, quantos quilómetros são 3 cm?',opts:['300 km','103 km','30 km'],a:0,exp:'3 saltos de 100 km = 300 km.'}}},
+  {t:'Pequena ou grande escala?',txt:'Quando um mapa mostra uma área <b>grande</b> (um país, um continente), cada coisa fica muito reduzida: é de <b>pequena escala</b> e tem pouco pormenor. Quando mostra uma área <b>pequena</b> (o bairro, a escola), é de <b>grande escala</b> e tem muito pormenor.',ana:'Usa o zoom do mapa do telemóvel: quando aproximas e vês a tua rua, estás em grande escala; quando afastas e vês a Europa toda, estás em pequena escala.',exm:'Planta da escola → grande escala. Mapa-mundo → pequena escala.',
+   chk:{q:'Uma planta da tua escola, com todas as salas desenhadas, é de…',opts:['grande escala','pequena escala'],a:0,mis:'escala',exp:'Área pequena, muito pormenor: grande escala.'},
+   alt:{txt:'Faz esta pergunta: «Consigo ver a minha casa neste mapa?» Se sim, é grande escala. Se a tua casa desaparece no meio de um país inteiro, é pequena escala.',chk:{q:'Um mapa com todos os continentes é de…',opts:['pequena escala','grande escala'],a:0,mis:'escala',exp:'A tua casa nem se vê: pequena escala.'}}}]},
+ {id:'zonas',concept:'zon',title:'Linhas imaginárias e zonas climáticas',hook:'Para que servem os trópicos e os círculos polares?',steps:[
+  {t:'As linhas que fazem fronteira entre zonas',txt:'Os trópicos e os círculos polares são os limites das zonas climáticas. A <b>zona quente</b> fica entre os dois trópicos. As <b>zonas temperadas</b> ficam entre um trópico e um círculo polar. As <b>zonas frias</b> ficam para lá dos círculos polares.',ana:'Imagina uma camisola às riscas vestida na Terra: o Equador é o meio da camisola, e cada linha imaginária é onde uma risca muda de cor.',exm:'Portugal está entre o Trópico de Câncer e o círculo polar ártico: zona temperada do Norte.',
+   chk:{q:'Entre que linhas fica a zona quente?',opts:['Trópico de Câncer e Trópico de Capricórnio','Círculo polar ártico e círculo polar antártico','Equador e Meridiano de Greenwich'],a:0,exp:'Por isso se chama «intertropical»: entre os trópicos.'},
+   alt:{txt:'Pensa no Equador como um cinto. A zona quente é um cinto largo à volta dele, que vai do Trópico de Câncer (em cima) até ao Trópico de Capricórnio (em baixo).',chk:{q:'Que zona fica entre o Trópico de Câncer e o círculo polar ártico?',opts:['Zona temperada do Norte','Zona fria do Norte','Zona quente'],a:0,exp:'É a zona onde vivemos.'}}},
+  {t:'Porque faz mais calor no Equador?',txt:'A Terra é redonda. Junto ao Equador, os raios do Sol chegam quase a direito e concentram o calor numa área pequena. Perto dos polos, chegam muito inclinados e o mesmo calor espalha-se por uma área enorme.',ana:'Aponta uma lanterna a direito para a mesa: fazes um círculo pequeno e muito forte. Inclina-a: a mancha fica grande e fraca. A luz é a mesma, mas espalha-se mais.',exm:'Por isso no verão, com o Sol mais alto, faz mais calor em Portugal do que no inverno.',
+   chk:{q:'Porque é que perto dos polos faz tanto frio?',opts:['Os raios do Sol chegam muito inclinados','Os polos estão mais longe do Sol','Há sempre muito vento'],a:0,mis:'distancia-sol',exp:'É a inclinação dos raios, não a distância ao Sol.'},
+   alt:{txt:'Lembra-te da tua sombra: ao meio-dia de verão é curta, porque o Sol está alto e os raios chegam a direito. No inverno é comprida, porque os raios vêm inclinados. Nos polos, é como um inverno quase permanente.',chk:{q:'Onde é que os raios solares chegam mais a direito?',opts:['Junto ao Equador','Junto aos polos','Em Portugal'],a:0,exp:'Junto ao Equador, por isso é a zona quente.'}}}]},
+ {id:'orientacao',concept:'ori',title:'Pontos colaterais e localização',hook:'Sudoeste ou noroeste? Como não trocar.',steps:[
+  {t:'Cardeais e colaterais',txt:'Os pontos <b>cardeais</b> são Norte, Sul, Este e Oeste. Os <b>colaterais</b> ficam entre eles e juntam dois nomes, dizendo sempre primeiro Norte ou Sul: Nordeste, Noroeste, Sudeste, Sudoeste.',ana:'Para lembrar a ordem no sentido dos ponteiros do relógio: «<b>N</b>unca <b>E</b>studes <b>S</b>em <b>O</b>lhar» – Norte, Este, Sul, Oeste.',exm:'Entre o Sul e o Oeste fica o Sudoeste (SO).',
+   chk:{q:'O ponto entre o Sul e o Oeste chama-se…',opts:['Sudoeste','Sudeste','Noroeste'],a:0,mis:'colateral',exp:'Sul + Oeste = Sudoeste.'},
+   alt:{txt:'Põe o dedo no Sul da rosa-dos-ventos e desliza para o lado do Oeste. Pelo caminho estás no «Sud-oeste». Se deslizares para o Este, estás no «Sud-este».',chk:{q:'O ponto entre o Norte e o Este chama-se…',opts:['Nordeste','Noroeste','Sudeste'],a:0,mis:'colateral',exp:'Norte + Este = Nordeste.'}}},
+  {t:'Localizar em relação a outro lugar',txt:'Para dizer onde fica um lugar <b>em relação</b> a outro, imagina que estás no segundo lugar e olhas para o primeiro. Em relação ao centro da Europa, a Península Ibérica fica em baixo e à esquerda: a <b>sudoeste</b>.',ana:'É como explicar a um colega onde está a tua mochila: «está à esquerda e atrás de ti». No mapa, esquerda = oeste e baixo = sul.',exm:'O Barreiro fica a sudeste de Lisboa, do outro lado do Tejo.',
+   chk:{q:'Em relação a Portugal continental, os Açores ficam a…',opts:['Oeste','Este','Norte'],a:0,exp:'Os Açores estão no meio do Atlântico, a oeste.'},
+   alt:{txt:'Lembra-te: no mapa, o Oeste é a esquerda. O Atlântico está à esquerda de Portugal, e os Açores estão no Atlântico.',chk:{q:'Em relação a Portugal, Espanha fica a…',opts:['Este','Oeste','Sul'],a:0,exp:'Espanha fica à direita no mapa: a este.'}}}]},
+ {id:'clima',concept:'cli',title:'Clima e influência do mar',hook:'Porque é que Madrid é tão fria no inverno e tão quente no verão?',steps:[
+  {t:'Clima não é estado do tempo',txt:'O <b>estado do tempo</b> é o que acontece num dia: chuva hoje, sol amanhã. O <b>clima</b> é a média de muitos anos (normalmente 30) de temperaturas e chuva num lugar.',ana:'O estado do tempo é como o teu humor de hoje; o clima é a tua maneira de ser. Podes estar mal-disposto num dia e ser uma pessoa alegre.',exm:'«Amanhã chove em Lisboa» → tempo. «Os verões em Lisboa são quentes e secos» → clima.',
+   chk:{q:'«Amanhã vai chover em Lisboa» fala de…',opts:['estado do tempo','clima'],a:0,mis:'clima-tempo',exp:'Refere-se a um dia concreto.'},
+   alt:{txt:'Para falar de clima precisas de muitos anos de registos. Se a frase fala de um dia, de uma semana ou de um momento, é estado do tempo.',chk:{q:'«No Algarve os verões são quentes e secos» fala de…',opts:['clima','estado do tempo'],a:0,mis:'clima-tempo',exp:'Descreve o que acontece todos os anos.'}}},
+  {t:'O mar suaviza as temperaturas',txt:'A água aquece e arrefece muito devagar. Por isso o oceano mantém o litoral mais fresco no verão e mais morno no inverno: temperaturas <b>amenas</b>. Longe do mar, no interior, não há esse efeito: verões muito quentes e invernos muito frios (clima <b>continental</b>).',ana:'Na praia, ao meio-dia, a areia escalda e a água está fresca. Ao fim do dia, a areia já arrefeceu e a água continua morna. A água muda devagar.',exm:'Porto (junto ao oceano): invernos amenos. Madrid (interior): invernos com geada.',
+   chk:{q:'Porque é que Madrid tem invernos muito frios e verões muito quentes?',opts:['Fica longe do mar','Fica perto do Mediterrâneo','Tem muitos rios'],a:0,mis:'mar-clima',exp:'Longe do mar, as temperaturas variam muito.'},
+   alt:{txt:'Pensa numa sopa: a panela grande (o oceano) demora muito a arrefecer; a chávena pequena (a terra) arrefece logo. Quem vive perto da panela grande sente temperaturas mais estáveis.',chk:{q:'Que cidade terá temperaturas mais amenas ao longo do ano?',opts:['Porto, junto ao oceano','Madrid, no interior'],a:0,mis:'mar-clima',exp:'O oceano suaviza as temperaturas.'}}}]},
+ {id:'relevo',concept:'rel',title:'Planalto, planície ou montanha?',hook:'A Meseta é alta e plana. Então o que é?',steps:[
+  {t:'Três formas, duas perguntas',txt:'Para classificar o relevo faz duas perguntas: <b>é alto ou baixo?</b> e <b>é plano ou inclinado?</b> Alto e inclinado → montanha. Alto e plano → planalto. Baixo e plano → planície.',ana:'Pensa numa mesa (planalto: alta e lisa em cima), no chão da sala (planície: baixo e liso) e num monte de almofadas (montanha: alto e com encostas).',exm:'A Meseta Ibérica tem cerca de 600 a 800 m de altitude e é plana: é um planalto.',
+   chk:{q:'Uma superfície plana a 700 m de altitude é…',opts:['um planalto','uma planície','uma montanha'],a:0,mis:'meseta',exp:'Alta e plana = planalto.'},
+   alt:{txt:'Planície e planalto são ambos planos. A única diferença é a altura: a planície está em baixo, perto do nível do mar; o planalto está «levantado», como o tampo de uma mesa.',chk:{q:'Um terreno plano junto ao mar, a 20 m de altitude, é…',opts:['uma planície','um planalto'],a:0,exp:'Plano e baixo = planície.'}}},
+  {t:'Ler as cores do mapa de relevo',txt:'No mapa de relevo, cada cor é um degrau de altitude. A legenda «Altitude (metros)» diz: tons claros = 0–200 m; tons mais escuros = 200–500 e 500–1000 m; castanho escuro = mais de 1000 m.',ana:'As cores funcionam como os andares de um prédio: quanto mais escura a cor, mais alto o andar.',exm:'A Serra da Estrela aparece em castanho escuro; o Alentejo em tons claros.',
+   chk:{q:'No mapa de relevo, o castanho escuro significa…',opts:['altitude acima de 1000 m','terra seca','floresta'],a:0,mis:'hipsometria',exp:'As cores indicam altitude, não vegetação nem clima.'},
+   alt:{txt:'Olha sempre para a legenda. Nesse mapa, as cores não dizem se há árvores ou se chove: dizem só a que altura está o terreno.',chk:{q:'Uma zona pintada com a cor de 0–200 m é provavelmente…',opts:['uma planície','uma montanha'],a:0,mis:'hipsometria',exp:'Baixa altitude → planície.'}}}]},
+ {id:'vegetacao',concept:'veg',title:'Folha caduca e folha persistente',hook:'Porque é que o castanheiro fica despido e o sobreiro não?',steps:[
+  {t:'Caduca ou persistente?',txt:'As árvores de <b>folha caduca</b> perdem todas as folhas no outono e ficam despidas no inverno. As de <b>folha persistente</b> mantêm as folhas todo o ano, trocando-as aos poucos.',ana:'«Caduca» vem de cair. A folha persistente é como o nosso cabelo: cai um fio de cada vez, mas nunca ficamos carecas de repente.',exm:'Castanheiro e carvalho-alvarinho → caduca. Sobreiro, azinheira, oliveira → persistente.',
+   chk:{q:'O castanheiro perde todas as folhas no outono. A sua folha é…',opts:['caduca','persistente'],a:0,mis:'caduca',exp:'Perde todas: caduca.'},
+   alt:{txt:'Repara no inverno: se a árvore está só com ramos, é de folha caduca. Se continua verde, é de folha persistente.',chk:{q:'O sobreiro está verde todo o ano. A sua folha é…',opts:['persistente','caduca'],a:0,mis:'caduca',exp:'Mantém as folhas: persistente.'}}},
+  {t:'A chuva decide',txt:'Onde chove muito (<b>Ibéria Húmida</b>, Norte e Noroeste) crescem árvores de folha larga e caduca. Onde chove pouco e o verão é seco (<b>Ibéria Seca</b>, Centro e Sul) crescem árvores de folha pequena, dura e persistente, que perde pouca água.',ana:'As folhas pequenas e com cera são como um casaco impermeável ao contrário: não deixam a água sair da planta.',exm:'Os montados de sobreiros do Alentejo dão a cortiça; Portugal é o maior produtor mundial.',
+   chk:{q:'Um montado de sobreiros no Alentejo pertence à…',opts:['Ibéria Seca','Ibéria Húmida'],a:0,exp:'Alentejo: Sul, pouca chuva, folha persistente.'},
+   alt:{txt:'Segue a chuva: muita chuva no Norte → Ibéria Húmida; pouca chuva no Centro e Sul → Ibéria Seca.',chk:{q:'O Minho, onde chove muito, pertence à…',opts:['Ibéria Húmida','Ibéria Seca'],a:0,exp:'Norte e Noroeste chuvosos.'}}}]}
+];
+
+/* ============ TESTE DE CONHECIMENTO ============ */
+const TEST = [
+ {id:'t1',d:1,kind:'Conceptual',concept:'rep',type:'mc',q:'Que representação mostra a Terra com a forma mais parecida com a real?',opts:['Globo terrestre','Planisfério','Imagem de satélite de Portugal'],a:0,mis:{1:'planisferio'},exp:'O globo é esférico como a Terra.'},
+ {id:'t2',d:1,kind:'Conceptual',concept:'lin',type:'mc',q:'Que linha divide a Terra em hemisfério norte e hemisfério sul?',opts:['Equador','Meridiano de Greenwich','Trópico de Câncer'],a:0,mis:{1:'lin-troca'},exp:'O Equador separa norte e sul.'},
+ {id:'t3',d:1,kind:'Cenário real',concept:'rio',type:'mc',q:'Uma turma da AEAV faz um passeio de barco no estuário junto ao Barreiro. Em que rio navega?',opts:['Tejo','Sado','Mondego'],a:0,exp:'O Barreiro fica na margem sul do estuário do Tejo.'},
+ {id:'t4',d:1,kind:'Conceptual',concept:'ori',type:'mc',img:['A','europa'],q:'Em relação à Europa, a Península Ibérica localiza-se a…',opts:['sudoeste','nordeste','sudeste'],a:0,mis:{1:'colateral',2:'colateral'},exp:'Em baixo e à esquerda no mapa: sudoeste.'},
+ {id:'t5',d:1,kind:'Conceptual',concept:'zon',type:'mc',q:'Em que zona climática fica Portugal?',opts:['Zona temperada do Norte','Zona temperada do Sul','Zona quente'],a:0,mis:{1:'temperada-sul'},exp:'Hemisfério norte, entre a zona quente e a zona fria do Norte.'},
+ {id:'t6',d:2,kind:'Cenário real',concept:'map',type:'mc',q:'A Joana quer um mapa para encontrar as ruas do bairro onde fica a escola. Que tipo de mapa deve procurar?',opts:['De grande escala','De pequena escala','Um planisfério'],a:0,mis:{1:'escala',2:'escala'},exp:'Para ver ruas é preciso muito pormenor: grande escala.'},
+ {id:'t7',d:2,kind:'Conceptual',concept:'rel',type:'mc',q:'O que é a Meseta Ibérica?',opts:['Um planalto: superfície alta e plana','Uma planície junto ao mar','Uma cordilheira de montanhas'],a:0,mis:{1:'meseta',2:'meseta'},exp:'A Meseta é o grande planalto do centro da Península.'},
+ {id:'t8',d:2,kind:'Cenário real',concept:'cli',type:'mc',q:'Em Madrid, em agosto, os termómetros chegam aos 38 °C; em janeiro, há manhãs abaixo de 0 °C. Que clima tem Madrid?',opts:['Temperado continental','Temperado marítimo','Temperado mediterrâneo'],a:0,mis:{1:'mar-clima'},exp:'Temperaturas extremas, longe do mar: continental.'},
+ {id:'t9',d:2,kind:'Cenário real',concept:'veg',type:'mc',q:'Num passeio no Minho, em novembro, vês bosques de carvalhos e castanheiros a perder as folhas. Que região e que tipo de folha são?',opts:['Ibéria Húmida, folha caduca','Ibéria Seca, folha persistente','Ibéria Húmida, folha persistente'],a:0,mis:{1:'caduca',2:'caduca'},exp:'Norte chuvoso → Ibéria Húmida; perder folhas no outono → caduca.'},
+ {id:'t10',d:2,kind:'Conceptual',concept:'zon',type:'mc',q:'Que linhas limitam a zona temperada do Norte?',opts:['Trópico de Câncer e círculo polar ártico','Equador e Trópico de Câncer','Os dois trópicos'],a:0,exp:'A zona temperada do Norte fica entre o Trópico de Câncer e o círculo polar ártico.'},
+ {id:'t11',d:2,kind:'Conceptual',concept:'rio',type:'mc',q:'Porque se diz que o Douro é um rio luso-espanhol?',opts:['Nasce em Espanha e corre também em Portugal','É o maior rio de Portugal','Desagua no Mar Mediterrâneo'],a:0,mis:{1:'rio-nacional'},exp:'Um rio luso-espanhol passa pelos dois países: o Douro nasce em Espanha e desagua no Porto.'},
+ {id:'t12',d:2,kind:'Cenário real',concept:'rep',type:'mc',q:'Os bombeiros querem ver agora, com pormenor, uma pequena área de mato a arder. Que recurso é mais útil?',opts:['Fotografia aérea captada por um drone','Imagem de satélite de toda a Europa','Planisfério'],a:0,mis:{1:'rep-satelite',2:'planisferio'},exp:'Área pequena, pormenor e rapidez: drone (fotografia aérea).'},
+ {id:'t13',d:3,kind:'Resolução de problemas',concept:'map',type:'mc',img:['A','europa'],q:'No mapa da Europa, 1 cm corresponde a 500 km. Entre Lisboa e Paris medes cerca de 3 cm. Qual é a distância real aproximada?',opts:['1500 km','503 km','150 km'],a:0,exp:'3 × 500 km = 1500 km.'},
+ {id:'t14',d:3,kind:'Resolução de problemas',concept:'ori',type:'mc',q:'Um navio sai de Lisboa e vai para o Funchal, na Madeira, que fica mais a sul e mais a oeste. Em que direção navega?',opts:['Sudoeste','Sudeste','Noroeste'],a:0,mis:{1:'colateral',2:'colateral'},exp:'Sul + Oeste = Sudoeste.'},
+ {id:'t15',d:3,kind:'Resolução de problemas',concept:'cli',type:'mc',q:'O Porto e Madrid ficam quase à mesma latitude, mas o Porto tem invernos mais amenos. Qual é a melhor explicação?',opts:['O Porto fica junto ao oceano, que suaviza as temperaturas','O Porto fica mais perto do Equador','Em Madrid chove mais'],a:0,mis:{1:'mar-clima',2:'clima-temp'},exp:'A proximidade do mar é o fator que faz a diferença.'},
+ {id:'t16',d:3,kind:'Conceptual',concept:'lin',type:'mc',q:'Portugal continental situa-se nos hemisférios…',opts:['norte e ocidental','norte e oriental','sul e ocidental'],a:0,mis:{1:'lin-troca',2:'lin-troca'},exp:'A norte do Equador e a oeste do Meridiano de Greenwich.'},
+ {id:'t17',d:3,kind:'Conceptual',concept:'veg',type:'multi',q:'Seleciona todas as características da Ibéria Seca.',opts:['Abrange o Centro e o Sul','Predominam árvores de folha persistente','Sobreiros e azinheiras','Abrange o Norte e o Noroeste','Predominam árvores de folha caduca'],a:[0,1,2],mis:{3:'caduca',4:'caduca'},exp:'Ibéria Seca: Centro e Sul, folha persistente (sobreiro, azinheira, oliveira).'},
+ {id:'t18',d:3,kind:'Resolução de problemas',concept:'rio',type:'order',q:'Ordena os quatro principais rios luso-espanhóis de <b>norte para sul</b>.',items:['Minho','Douro','Tejo','Guadiana'],exp:'Minho (fronteira norte), Douro (Porto), Tejo (Lisboa), Guadiana (fronteira sul-este).'},
+ {id:'t19',d:3,kind:'Desafio',concept:'map',type:'text',q:'Escreve três dos cinco elementos essenciais de um mapa.',groups:[['titulo'],['orientac','rosa','seta','norte'],['escala'],['legenda'],['fonte']],need:3,model:'Título, orientação, escala (também legenda e fonte).',exp:'Os cinco elementos: título, orientação, escala, legenda e fonte.'},
+ {id:'t20',d:3,kind:'Desafio',concept:'zon',type:'order',q:'Uma investigadora viaja de Lisboa até à Antártida. Ordena as zonas climáticas pela ordem em que as atravessa.',items:['Zona temperada do Norte','Zona quente','Zona temperada do Sul','Zona fria do Sul'],exp:'Sai da zona temperada do Norte, atravessa a zona quente e a zona temperada do Sul e chega à zona fria do Sul.'}
+];
+
+/* ============ GLOSSÁRIO ============ */
+const GLOSS = [
+ ['Afluente','Rio que desagua noutro rio.'],['Altitude','Altura de um lugar em relação ao nível do mar.'],['Bacia hidrográfica','Área cujas águas correm para o mesmo rio.'],
+ ['Círculo polar','Paralelo junto a cada polo que limita as zonas frias (ártico a norte, antártico a sul).'],['Clima','Condições médias de temperatura e precipitação de um lugar ao longo de muitos anos.'],
+ ['Cordilheira','Conjunto de montanhas alinhadas.'],['Equador','Paralelo maior, que divide a Terra em hemisfério norte e hemisfério sul.'],['Escala','Indica quantas vezes a realidade foi reduzida no mapa.'],
+ ['Estado do tempo','Condições da atmosfera num dado momento.'],['Estuário','Foz larga de um rio onde a água doce se mistura com a salgada.'],['Folha caduca','Folha que cai toda no outono.'],
+ ['Folha persistente','Folha que se mantém todo o ano, renovando-se aos poucos.'],['Fotografia aérea','Imagem de parte da Terra captada de um avião ou drone.'],['Foz','Local onde um rio termina.'],
+ ['Globo terrestre','Representação esférica da Terra, a mais próxima da realidade.'],['Hemisfério','Metade da Terra (norte/sul ou ocidental/oriental).'],['Ibéria Húmida','Norte e Noroeste da Península: muita chuva, folha caduca.'],
+ ['Ibéria Seca','Centro e Sul da Península: pouca chuva, folha persistente.'],['Imagem de satélite','Imagem da Terra captada a partir do Espaço.'],['Latitude','Distância de um lugar ao Equador, em graus.'],
+ ['Legenda','Explicação das cores e símbolos de um mapa.'],['Levada','Canal artificial que transporta água para rega, típico da Madeira.'],['Longitude','Distância de um lugar ao Meridiano de Greenwich, em graus.'],
+ ['Meridiano','Semicírculo imaginário de polo a polo.'],['Meridiano de Greenwich','Meridiano de referência, divide a Terra em ocidental e oriental.'],['Meseta','Grande planalto do centro da Península Ibérica.'],
+ ['Montanha','Elevação de terreno alta e com encostas inclinadas.'],['Nascente','Local onde um rio começa.'],['Orientação','Indicação do Norte num mapa.'],['Paralelo','Linha imaginária paralela ao Equador.'],
+ ['Península','Porção de terra rodeada de água por todos os lados menos um.'],['Planalto','Superfície plana a altitude elevada.'],['Planície','Superfície plana e de baixa altitude.'],
+ ['Planisfério','Representação de toda a superfície terrestre num plano.'],['Pontos colaterais','Nordeste, Noroeste, Sudeste e Sudoeste.'],['Precipitação','Água que cai da atmosfera (chuva, neve, granizo).'],
+ ['Ribeira','Pequeno curso de água, típico das ilhas.'],['Rio luso-espanhol','Rio que corre em Portugal e em Espanha.'],['Rio nacional','Rio que nasce e desagua em Portugal.'],
+ ['Rosa-dos-ventos','Figura que indica os pontos cardeais e colaterais.'],['Trópico de Câncer','Paralelo do hemisfério norte que limita a zona quente.'],['Trópico de Capricórnio','Paralelo do hemisfério sul que limita a zona quente.'],
+ ['Zona temperada do Norte','Zona climática entre o Trópico de Câncer e o círculo polar ártico, onde fica Portugal.']
+];
+
+/* ============ ESTADO ============ */
+const KEY='atlas-pi-hgp-v1';
+let S = {name:'',path:{C:{},B:{},A:{}},recap:{},unlocked:['C'],cur:{lvl:null,mod:0},lab:{},test:null};
+try{const raw=localStorage.getItem(KEY); if(raw){S=Object.assign(S,JSON.parse(raw));}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+const CKEY='atlas-pi-config';let TCFG={};
+try{TCFG=JSON.parse(localStorage.getItem(CKEY)||'{}')||{};}catch(e){}
+function cfg(){return{email:(CONFIG.email||TCFG.email||'').trim(),script:(CONFIG.script||TCFG.script||'').trim()};}
+function sendOn(){const c=cfg();return !!(c.email||c.script);}
+function needStudent(){return sendOn()&&(!(S.name||'').trim()||!(S.turma||'').trim());}
+function studentGate(onOk,intro){
+  const n=h('input',{type:'text',id:'g-nome',value:S.name||'',placeholder:'Nome e apelido',autocomplete:'name'});
+  const t=h('input',{type:'text',id:'g-turma',value:S.turma||'',placeholder:'Ex.: 5.º B'});
+  const msg=h('div',{});
+  return h('form',{class:'card gate',onsubmit:e=>{e.preventDefault();const nv=n.value.trim(),tv=t.value.trim();msg.innerHTML='';
+      if(!nv||!tv){msg.append(h('div',{class:'fb no'},'Escreve o teu nome e a tua turma para continuar.'));return;}
+      S.name=nv;S.turma=tv;save();onOk();}},
+    h('h2',{},'Antes de começar'),h('p',{class:'lead'},intro||'O teu professor vai receber os resultados. Escreve o teu nome e a tua turma.'),
+    h('div',{class:'gatef'},h('label',{for:'g-nome'},'Nome',n),h('label',{for:'g-turma'},'Turma',t)),
+    h('div',{class:'row'},h('button',{class:'btn',type:'submit'},'Continuar')),msg);
+}
+function postResult(url,d){return fetch(url,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)});}
+function copyText(txt,btn){const done=()=>{const o=btn.textContent;btn.textContent='Copiado';setTimeout(()=>btn.textContent=o,1600);};
+  try{navigator.clipboard.writeText(txt).then(done,()=>fallbackCopy(txt,done));}catch(e){fallbackCopy(txt,done);}}
+function fallbackCopy(txt,done){const ta=h('textarea',{style:'position:fixed;left:-9999px'});ta.value=txt;document.body.append(ta);ta.select();try{document.execCommand('copy');done();}catch(e){}ta.remove();}
+
+/* ============ UTILITÁRIOS ============ */
+const $=(s,r=document)=>r.querySelector(s);
+function h(tag,attrs,...kids){const e=document.createElement(tag);if(attrs)for(const k in attrs){const v=attrs[k];if(v==null||v===false)continue;if(k==='html')e.innerHTML=v;else if(k.startsWith('on'))e.addEventListener(k.slice(2),v);else e.setAttribute(k,v===true?'':v);}for(const c of kids.flat()){if(c==null||c===false)continue;e.append(c.nodeType?c:document.createTextNode(c));}return e;}
+function shuffle(n){const a=[...Array(n).keys()];for(let i=n-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,' ').trim();}
+function has(text,k){const t=' '+norm(text)+' ';const kk=norm(k);if(kk.includes(' '))return t.includes(' '+kk);return t.split(' ').some(w=>w.startsWith(kk));}
+function src(lvl,k){return (IMG[lvl]||{})[k]||k;}
+window.imgFail=function(el){const d=h('div',{class:'imgmiss'},'Imagem em falta: '+el.getAttribute('src')+'. Coloca o ficheiro na mesma pasta desta aplicação.');el.replaceWith(d);};
+function imgTag(file,alt,extra){return h('img',Object.assign({src:file,alt:alt||'',loading:'lazy',onerror:function(){imgFail(this);}},extra||{}));}
+function fig(file,cap){return h('figure',{class:'doc'},imgTag(file,cap),cap?h('figcaption',{html:cap+' · <b>'+file+'</b>'}):null);}
+function stripTags(s){return s.replace(/<[^>]+>/g,'');}
+
+/* ============ MOTOR DE EXERCÍCIOS ============ */
+const TYPE_LABEL={mc:'Escolha múltipla',multi:'Seleção múltipla',tf:'Verdadeiro ou falso',tffix:'V/F com correção',match:'Associação',imgchoice:'Escolhe a imagem',imglabel:'Legendar imagens',hotspot:'Clica no mapa',text:'Resposta aberta',order:'Ordenar',reflect:'Reflexão'};
+
+function exEl(ex,lvl,opt){
+  opt=opt||{};
+  const box=h('div',{class:'ex'});
+  const meta=h('div',{class:'meta'},h('span',{class:'chip mono'},TYPE_LABEL[ex.type]||ex.type));
+  if(opt.metaExtra) opt.metaExtra.forEach(m=>meta.append(m));
+  box.append(meta,h('div',{class:'q',html:ex.q}));
+  const L=ex.imgLvl||lvl;
+  if(ex.img){const k=Array.isArray(ex.img)?ex.img[1]:ex.img;const ll=Array.isArray(ex.img)?ex.img[0]:L;const f=h('div',{style:'max-width:520px'},fig(src(ll,k),''));box.append(f);}
+  const body=h('div',{});box.append(body);
+  let st={}; let getAnswer, mark, answerText;
+  if(ex.type==='mc'||ex.type==='multi'){
+    const multi=ex.type==='multi'; const order=shuffle(ex.opts.length); st.sel=multi?new Set():null;
+    const wrap=h('div',{class:'opts'}); const els=[];
+    order.forEach(i=>{const inp=h('input',{type:multi?'checkbox':'radio',name:'x'+Math.random(),tabindex:'-1','aria-hidden':'true'});
+      const b=h('button',{class:'opt',type:'button',onclick:()=>{if(st.locked)return;if(multi){st.sel.has(i)?st.sel.delete(i):st.sel.add(i);}else st.sel=i;els.forEach(o=>{const on=multi?st.sel.has(o.i):st.sel===o.i;o.b.classList.toggle('sel',on);o.inp.checked=on;});}},inp,h('span',{html:ex.opts[i]}));
+      els.push({i,b,inp});wrap.append(b);});
+    body.append(wrap);
+    getAnswer=()=>{if(multi){if(!st.sel.size)return null;const a=new Set(ex.a);const ok=st.sel.size===a.size&&[...st.sel].every(x=>a.has(x));const mis=[...st.sel].filter(x=>!a.has(x)).map(x=>ex.mis&&ex.mis[x]).filter(Boolean);return{ok,mis};}
+      if(st.sel==null)return null;return{ok:st.sel===ex.a,mis:st.sel!==ex.a&&ex.mis&&ex.mis[st.sel]?[ex.mis[st.sel]]:[]};};
+    mark=()=>els.forEach(o=>{const correct=multi?ex.a.includes(o.i):o.i===ex.a;const chosen=multi?st.sel.has(o.i):st.sel===o.i;if(correct)o.b.classList.add('right');else if(chosen)o.b.classList.add('wrong');});
+    answerText=()=>multi?ex.a.map(i=>stripTags(ex.opts[i])).join(', '):stripTags(ex.opts[ex.a]);
+  }
+  else if(ex.type==='tf'||ex.type==='tffix'){
+    const wrap=h('div',{class:'tf'});st.v=ex.items.map(()=>null);const rows=[];
+    ex.items.forEach((it,idx)=>{const fix=ex.type==='tffix'?h('input',{type:'text',class:'fix',placeholder:'Corrige a afirmação…',hidden:true,id:'fix'+Math.random().toString(36).slice(2)}):null;
+      const bv=h('button',{type:'button','aria-label':'Verdadeiro'},'V'),bf=h('button',{type:'button','aria-label':'Falso'},'F');
+      const set=val=>{if(st.locked)return;st.v[idx]=val;bv.classList.toggle('sel',val===true);bf.classList.toggle('sel',val===false);if(fix)fix.hidden=val!==false;};
+      bv.onclick=()=>set(true);bf.onclick=()=>set(false);
+      const r=h('div',{class:'tfrow'},h('span',{},it.t),h('div',{class:'vf'},bv,bf),fix);rows.push({r,fix});wrap.append(r);});
+    body.append(wrap);
+    getAnswer=()=>{if(st.v.some(v=>v===null))return null;let ok=true;st.fixOk=[];ex.items.forEach((it,i)=>{if(st.v[i]!==it.v)ok=false;if(ex.type==='tffix'&&it.v===false&&st.v[i]===false){const txt=rows[i].fix.value;const g=it.fix.every(alts=>alts.some(k=>has(txt,k)));st.fixOk[i]=g;if(!g)ok=false;}});
+      return{ok,mis:ok?[]:(ex.mis&&ex.mis.any?[ex.mis.any]:[])};};
+    mark=()=>ex.items.forEach((it,i)=>{const good=st.v[i]===it.v&&(st.fixOk[i]!==false);rows[i].r.classList.add(good?'right':'wrong');if(rows[i].fix&&!rows[i].fix.hidden)rows[i].fix.classList.add(st.fixOk[i]?'right':'wrong');});
+    answerText=()=>ex.items.map(it=>(it.v?'V':'F')+(it.model?' – '+it.model:'')).join(' · ');
+  }
+  else if(ex.type==='match'){
+    const tw=h('div',{class:'tscroll'});const t=h('table',{class:'match'});const hr=h('tr',{},h('th',{},'Afirmação'));ex.cols.forEach(c=>hr.append(h('th',{},c.h)));t.append(h('thead',{},hr));
+    const tb=h('tbody');st.sels=[];
+    ex.rows.forEach((r,ri)=>{const tr=h('tr',{},h('td',{},r));st.sels[ri]=[];ex.cols.forEach((c,ci)=>{const s=h('select',{id:'s'+Math.random().toString(36).slice(2),'aria-label':c.h+' para '+r},h('option',{value:''},'—'),c.opts.map((o,oi)=>h('option',{value:oi},o)));st.sels[ri][ci]=s;tr.append(h('td',{},s));});tb.append(tr);});
+    t.append(tb);tw.append(t);body.append(tw);
+    getAnswer=()=>{let empty=false,ok=true,right=0,tot=0;ex.rows.forEach((r,ri)=>ex.cols.forEach((c,ci)=>{const v=st.sels[ri][ci].value;if(v==='')empty=true;tot++;if(+v===c.a[ri]&&v!=='')right++;else ok=false;}));if(empty)return null;return{ok,partial:right/tot,mis:ok?[]:(ex.mis&&ex.mis.any?[ex.mis.any]:[])};};
+    mark=()=>ex.rows.forEach((r,ri)=>ex.cols.forEach((c,ci)=>{const s=st.sels[ri][ci];s.classList.add(+s.value===c.a[ri]?'right':'wrong');s.disabled=true;}));
+    answerText=()=>ex.rows.map((r,ri)=>r.replace(/\.$/,'')+' → '+ex.cols.map(c=>c.opts[c.a[ri]]).join(' / ')).join('; ');
+  }
+  else if(ex.type==='imgchoice'){
+    const wrap=h('div',{class:'imgopts'});const els=[];
+    ex.imgs.forEach((im,i)=>{const b=h('button',{type:'button',class:'imgopt',onclick:()=>{if(st.locked)return;st.sel=i;els.forEach((e,j)=>e.classList.toggle('sel',j===i));}},imgTag(src(L,im.k),im.l),h('span',{},im.l));els.push(b);wrap.append(b);});
+    body.append(wrap);
+    getAnswer=()=>st.sel==null?null:{ok:st.sel===ex.a,mis:st.sel!==ex.a&&ex.mis&&ex.mis[st.sel]?[ex.mis[st.sel]]:[]};
+    mark=()=>els.forEach((e,j)=>{if(j===ex.a)e.classList.add('right');else if(j===st.sel)e.classList.add('wrong');});
+    answerText=()=>ex.imgs[ex.a].l;
+  }
+  else if(ex.type==='imglabel'){
+    const wrap=h('div',{class:'imgopts'});st.sels=[];
+    ex.imgs.forEach((im,i)=>{const s=h('select',{id:'il'+Math.random().toString(36).slice(2),'aria-label':'Forma de relevo da imagem '+(i+1)},h('option',{value:''},'—'),ex.opts.map((o,oi)=>h('option',{value:oi},o)));st.sels.push(s);wrap.append(h('div',{class:'imgopt',style:'cursor:default'},imgTag(src(L,im.k),'Imagem '+(i+1)),s));});
+    body.append(wrap);
+    getAnswer=()=>{if(st.sels.some(s=>s.value===''))return null;return{ok:ex.imgs.every((im,i)=>+st.sels[i].value===im.a),mis:[]};};
+    mark=()=>ex.imgs.forEach((im,i)=>{st.sels[i].classList.add(+st.sels[i].value===im.a?'right':'wrong');st.sels[i].disabled=true;});
+    answerText=()=>ex.imgs.map((im,i)=>'Imagem '+(i+1)+': '+ex.opts[im.a]).join('; ');
+  }
+  else if(ex.type==='hotspot'){
+    const crop=ex.crop||100;const inner=h('div',{class:'inner',style:'width:'+(10000/crop)+'%'});const im=imgTag(src(L,ex.k),'Mapa',{style:'width:100%'});inner.append(im);
+    const hot=h('div',{class:'hot',role:'button',tabindex:'0','aria-label':'Mapa: clica para marcar'},inner);
+    hot.addEventListener('click',e=>{if(st.locked)return;const r=inner.getBoundingClientRect();const x=(e.clientX-r.left)/r.width*100,y=(e.clientY-r.top)/r.height*100;st.p={x,y};let pin=$('.pin',inner);if(!pin){pin=h('div',{class:'pin'});inner.append(pin);}pin.style.left=x+'%';pin.style.top=y+'%';});
+    body.append(hot);
+    const inside=p=>ex.zones.some(z=>p.x>=z.x&&p.x<=z.x+z.w&&p.y>=z.y&&p.y<=z.y+z.h);
+    getAnswer=()=>st.p?{ok:inside(st.p),mis:[]}:null;
+    mark=()=>{const pin=$('.pin',inner);if(pin&&inside(st.p))pin.classList.add('ok');else ex.zones.forEach(z=>inner.append(h('div',{class:'zone',style:`left:${z.x}%;top:${z.y}%;width:${z.w}%;height:${z.h}%`})));};
+    answerText=()=>'a área assinalada a tracejado verde';
+  }
+  else if(ex.type==='text'||ex.type==='reflect'){
+    const ta=h('textarea',{id:'ta'+Math.random().toString(36).slice(2),placeholder:'Escreve aqui a tua resposta…','aria-label':'Resposta'});body.append(ta);
+    getAnswer=()=>{const v=ta.value.trim();if(!v)return null;if(ex.type==='reflect')return{ok:true,reflect:true,mis:[]};
+      let n=0;if(ex.groups)n=ex.groups.filter(g=>g.some(k=>has(v,k))).length;if(ex.anyOf)n=ex.anyOf.filter(k=>has(v,k)).length;
+      const bad=(ex.forbid||[]).some(k=>has(v,k));const ok=n>=ex.need&&!bad;return{ok,partial:Math.min(1,n/ex.need),forbidden:bad,mis:ok?[]:(ex.mis&&ex.mis.fail?[ex.mis.fail]:[])};};
+    mark=r=>{if(ex.type!=='reflect')ta.classList.add(r.ok?'right':'wrong');ta.readOnly=true;};
+    answerText=()=>ex.model;
+  }
+  else if(ex.type==='order'){
+    st.ord=shuffle(ex.items.length);if(st.ord.every((v,i)=>v===i))st.ord.reverse();
+    const ol=h('ol');const wrap=h('div',{class:'order'},ol);body.append(wrap);
+    const draw=()=>{ol.innerHTML='';st.ord.forEach((it,pos)=>{ol.append(h('li',{},h('span',{class:'n'},(pos+1)+'.'),h('span',{class:'t'},ex.items[it]),
+      h('button',{type:'button','aria-label':'Subir',onclick:()=>{if(st.locked||pos===0)return;[st.ord[pos-1],st.ord[pos]]=[st.ord[pos],st.ord[pos-1]];draw();}},'↑'),
+      h('button',{type:'button','aria-label':'Descer',onclick:()=>{if(st.locked||pos===st.ord.length-1)return;[st.ord[pos+1],st.ord[pos]]=[st.ord[pos],st.ord[pos+1]];draw();}},'↓')));});};
+    draw();
+    getAnswer=()=>({ok:st.ord.every((v,i)=>v===i),mis:[]});
+    mark=()=>[...ol.children].forEach((li,i)=>li.style.borderColor=st.ord[i]===i?'var(--ok)':'var(--bad)');
+    answerText=()=>ex.items.join(' → ');
+  }
+  const fb=h('div',{});
+  const btn=h('button',{class:'btn',type:'button'},opt.test?'Confirmar resposta':'Verificar');
+  const actions=h('div',{class:'row'},btn);
+  box.append(actions,fb);
+  btn.onclick=()=>{
+    const r=getAnswer();
+    if(!r){fb.innerHTML='';fb.append(h('div',{class:'fb info'},'Responde primeiro: '+(ex.type==='text'||ex.type==='reflect'?'escreve a tua resposta.':ex.type==='hotspot'?'clica no mapa.':'escolhe ou completa todas as opções.')));return;}
+    st.locked=true;btn.disabled=true;mark(r);fb.innerHTML='';
+    const c=ex.concept||opt.concept;
+    let f;
+    if(r.reflect){f=h('div',{class:'fb info'},h('b',{class:'h'},'Obrigado pela tua resposta.'),h('div',{html:ex.exp}));}
+    else if(r.ok){f=h('div',{class:'fb ok'},h('b',{class:'h'},'Certo!'),h('div',{html:ex.exp}));if(ex.type==='text')f.append(h('div',{class:'mis',html:'<b>Resposta-modelo:</b> '+ex.model}));}
+    else{f=h('div',{class:'fb no'},h('b',{class:'h'},r.partial?('Quase: '+Math.round(r.partial*100)+'% certo.'):'Ainda não.'));
+      f.append(h('div',{html:'<b>Resposta correta:</b> '+answerText()}),h('div',{html:ex.exp}));
+      if(r.forbidden)f.append(h('div',{class:'mis'},'A tua resposta inclui uma ideia errada. Relê a explicação.'));
+      (r.mis||[]).forEach(m=>MIS[m]&&f.append(h('div',{class:'mis',html:'<b>Equívoco comum:</b> '+MIS[m]})));
+      const lab=c&&CONCEPTS[c]&&CONCEPTS[c].lab;if(lab&&!opt.test){f.append(h('div',{class:'mis'},'Queres outra explicação? ',h('button',{class:'linkbtn',type:'button',onclick:()=>{go('laboratorio');openLab(lab);}},'Abre o laboratório «'+LAB.find(l=>l.id===lab).title+'»')));}}
+    fb.append(f);
+    if(!opt.test&&!r.reflect){actions.append(h('button',{class:'btn ghost',type:'button',onclick:()=>{const n=exEl(ex,lvl,opt);box.replaceWith(n);}},'Repetir'));}
+    if(opt.onDone)opt.onDone(r,c);
+  };
+  return box;
+}
+
+/* ============ NAVEGAÇÃO ============ */
+const app=$('#app');
+const VIEWS={percurso:viewPath,laboratorio:viewLab,teste:viewTest,glossario:viewGloss,professor:viewProf};
+if(ALUNO){const pb=document.querySelector('#tabs button[data-v="professor"]');if(pb)pb.remove();delete VIEWS.professor;}
+function go(v){if(!VIEWS[v])v='percurso';if(location.hash!=='#'+v){try{history.replaceState(null,'','#'+v);}catch(e){location.hash=v;}}
+  document.querySelectorAll('#tabs button').forEach(b=>b.setAttribute('aria-current',b.dataset.v===v?'true':'false'));app.innerHTML='';VIEWS[v]();window.scrollTo(0,0);}
+document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>go(b.dataset.v));
+window.addEventListener('hashchange',()=>go(location.hash.slice(1)));
+
+/* ============ PERCURSO ============ */
+function lvlStats(l){let tot=0,done=0,ok=0;PATH[l].modules.forEach(m=>m.ex.forEach((e,i)=>{if(e.type==='reflect')return;tot++;const r=S.path[l][m.id+'-'+i];if(r){done++;if(r.ok)ok++;}}));return{tot,done,ok};}
+function viewPath(){
+  if(needStudent()){const g=h('div',{class:'view'},h('h1',{},'A Península Ibérica: localização e quadro natural'),studentGate(viewPathRefresh));app.append(g);return;}
+  if(S.cur.lvl&&S.unlocked.includes(S.cur.lvl))return viewLevel(S.cur.lvl);
+  const v=h('div',{class:'view'});
+  const name=h('input',{type:'text',id:'aluno',value:S.name,placeholder:'Escreve o teu nome',oninput:e=>{S.name=e.target.value;save();}});
+  const turma=h('input',{type:'text',id:'turma',value:S.turma||'',placeholder:'Ex.: 5.º B',oninput:e=>{S.turma=e.target.value;save();}});
+  v.append(h('section',{class:'hero'},
+    h('div',{style:'display:grid;gap:12px'},h('span',{class:'mono',style:'color:var(--muted)'},'Ficha de Avaliação n.º 1 · Grupos I e II'),h('h1',{},'A Península Ibérica: localização e quadro natural'),
+      h('p',{class:'lead'},'Sobe do Nível C ao Nível A como quem sobe de uma planície até à montanha. Em cada etapa lês a explicação, conheces as palavras-chave, vês exemplos e evitas os erros mais comuns. No fim de cada nível há uma recapitulação.')),
+    h('div',{class:'card name'},h('label',{for:'aluno'},'Nome do aluno'),name,h('label',{for:'turma'},'Turma'),turma,h('p',{class:'legend-note'},'O progresso fica guardado neste navegador.'+(sendOn()?' No fim do teste, os resultados são enviados ao professor.':'')))));
+  const lad=h('div',{class:'ladder'});
+  ['A','B','C'].forEach(l=>{const L=LV[l];const s=lvlStats(l);const locked=!S.unlocked.includes(l);
+    lad.append(h('button',{class:'band',type:'button',disabled:locked,onclick:()=>{S.cur={lvl:l,mod:0};save();viewPathRefresh();}},
+      h('div',{class:'alt'},h('div',{class:'sw',style:'background:'+L.color}),h('span',{},L.alt),h('span',{},L.form)),
+      h('div',{},h('h3',{},L.name+' · '+L.sub+(locked?' (bloqueado)':'')),h('p',{},L.desc+(S.recap[l]!=null?' Recapitulação: '+S.recap[l]+'%.':''))),
+      h('div',{class:'bar',title:s.done+' de '+s.tot+' exercícios'},h('i',{style:'width:'+(s.tot?Math.round(s.done/s.tot*100):0)+'%'}))));});
+  v.append(h('div',{style:'display:grid;gap:8px'},h('h2',{},'O teu percurso'),h('p',{class:'legend-note'},'Legenda como num mapa de relevo: quanto mais escura a cor, mais alto (e mais difícil) é o nível. Um nível desbloqueia quando acertas pelo menos 60% na recapitulação do anterior.'),lad));
+  app.append(v);
+}
+function viewPathRefresh(){app.innerHTML='';viewPath();window.scrollTo(0,0);}
+function viewLevel(l){
+  const P=PATH[l],L=LV[l];const n=P.modules.length;let i=S.cur.mod||0;
+  const v=h('div',{class:'view'});
+  const top=h('div',{class:'row',style:'justify-content:space-between'},
+    h('div',{class:'row'},h('button',{class:'btn ghost small',type:'button',onclick:()=>{S.cur.lvl=null;save();viewPathRefresh();}},'← Níveis'),
+      h('span',{class:'chip'},h('i',{style:'width:10px;height:10px;border-radius:2px;display:inline-block;background:'+L.color}),L.name+' · '+L.form+' '+L.alt)));
+  const stp=h('nav',{class:'stepper','aria-label':'Etapas'});
+  P.modules.forEach((m,k)=>{const done=m.ex.every((e,j)=>e.type==='reflect'||S.path[l][m.id+'-'+j]);stp.append(h('button',{type:'button','aria-current':k===i?'true':'false',onclick:()=>{S.cur.mod=k;save();viewPathRefresh();}},h('span',{class:'dot'+(done?' done':'')}),(k+1)+'. '+m.title));});
+  stp.append(h('button',{type:'button','aria-current':i===n?'true':'false',onclick:()=>{S.cur.mod=n;save();viewPathRefresh();}},h('span',{class:'dot'+(S.recap[l]!=null?' done':'')}),'Recapitulação'));
+  v.append(top,stp);
+  if(i<n)v.append(moduleEl(l,P.modules[i],i,n));else v.append(recapEl(l));
+  app.append(v);
+}
+function moduleEl(l,m,i,n){
+  const w=h('div',{class:'view'});
+  w.append(h('div',{style:'display:grid;gap:6px'},h('span',{class:'mono',style:'color:var(--muted)'},'Etapa '+(i+1)+' de '+n+' · '+CONCEPTS[m.concept].n),h('h2',{},m.title)));
+  const les=h('div',{class:'lesson'});
+  les.append(h('div',{class:'blk wide'},h('h4',{},'Conceito'),h('p',{html:m.lesson.c})));
+  const dl=h('dl',{class:'terms'});m.lesson.t.forEach(([a,b])=>dl.append(h('dt',{},a),h('dd',{},b)));
+  les.append(h('div',{class:'blk'},h('h4',{},'Terminologia essencial'),dl));
+  les.append(h('div',{class:'blk'},h('h4',{},'Na prática'),h('p',{html:m.lesson.p})));
+  les.append(h('div',{class:'blk wide mis'},h('h4',{},'Cuidado com estes equívocos'),h('ul',{class:'clean'},m.lesson.e.map(x=>h('li',{html:x})))));
+  w.append(les);
+  if(m.doc)w.append(h('div',{style:'max-width:620px'},fig(src(l,m.doc.k),m.doc.cap)));
+  if(m.docs){w.append(h('div',{style:'display:grid;gap:6px'},h('p',{class:'mono',style:'color:var(--muted)'},m.docsCap),h('div',{class:'docs'},m.docs.map(d=>fig(src(l,d.k),d.cap)))));}
+  w.append(h('h3',{},'Exercícios'));
+  m.ex.forEach((e,j)=>{const id=m.id+'-'+j;w.append(exEl(e,l,{concept:m.concept,onDone:(r,c)=>{if(!S.path[l][id])S.path[l][id]={ok:r.ok,c:c||m.concept,mis:r.mis||[]};save();}}));});
+  const nav=h('div',{class:'row',style:'justify-content:space-between'},
+    h('button',{class:'btn ghost',type:'button',disabled:i===0,onclick:()=>{S.cur.mod=i-1;save();viewPathRefresh();}},'← Etapa anterior'),
+    h('button',{class:'btn',type:'button',onclick:()=>{S.cur.mod=i+1;save();viewPathRefresh();}},i===n-1?'Ir para a recapitulação →':'Próxima etapa →'));
+  w.append(nav);return w;
+}
+function recapEl(l){
+  const P=PATH[l],L=LV[l];const w=h('div',{class:'view'});
+  w.append(h('div',{style:'display:grid;gap:6px'},h('span',{class:'mono',style:'color:var(--muted)'},'Recapitulação · '+L.name),h('h2',{},'Antes de subires: o essencial')));
+  w.append(h('div',{class:'card'},h('ul',{class:'clean'},P.recap.points.map(p=>h('li',{},p)))));
+  w.append(h('h3',{},'Mini-teste de verificação'));
+  const res={};
+  P.recap.quiz.forEach((q,k)=>w.append(exEl(q,l,{onDone:r=>{res[k]=r.ok;}})));
+  const out=h('div',{});
+  w.append(h('div',{class:'row'},h('button',{class:'btn',type:'button',onclick:()=>{
+    const tot=P.recap.quiz.length;const answered=Object.keys(res).length;out.innerHTML='';
+    if(answered<tot){out.append(h('div',{class:'fb info'},'Responde às '+tot+' perguntas antes de concluir ('+answered+' respondidas).'));return;}
+    const sc=Math.round(Object.values(res).filter(Boolean).length/tot*100);S.recap[l]=sc;
+    const nx=L.next;let msg;
+    if(sc>=60){if(nx&&!S.unlocked.includes(nx))S.unlocked.push(nx);msg=h('div',{class:'fb ok'},h('b',{class:'h'},'Nível concluído com '+sc+'%.'),nx?h('div',{},'Desbloqueaste o '+LV[nx].name+'. ',h('button',{class:'linkbtn',type:'button',onclick:()=>{S.cur={lvl:nx,mod:0};save();viewPathRefresh();}},'Começar agora')):h('div',{},'Chegaste ao topo! Agora faz o ',h('button',{class:'linkbtn',type:'button',onclick:()=>go('teste')},'Teste de conhecimento'),' para receberes o teu plano de revisão.'));}
+    else msg=h('div',{class:'fb no'},h('b',{class:'h'},'Obtiveste '+sc+'%.'),h('div',{},'Precisas de 60% para avançar. Revê as etapas onde erraste e usa o Repetir em cada pergunta, depois volta a concluir.'));
+    save();out.append(msg);}},'Concluir nível')),out);
+  return w;
+}
+
+/* ============ LABORATÓRIO ============ */
+let labOpen=null;
+function viewLab(){
+  if(labOpen)return labTopic(LAB.find(x=>x.id===labOpen));
+  const v=h('div',{class:'view'});
+  v.append(h('div',{style:'display:grid;gap:8px'},h('h1',{},'Laboratório de conceitos difíceis'),h('p',{class:'lead'},'Seis ideias que costumam causar confusão, explicadas passo a passo, com analogias do dia a dia. Depois de cada passo há uma pergunta. Se errares, aparece outra forma de explicar e uma nova pergunta.')));
+  const g=h('div',{class:'labgrid'});
+  LAB.forEach(t=>{const st=S.lab[t.id];g.append(h('button',{class:'labcard',type:'button',onclick:()=>openLab(t.id)},
+    h('span',{class:'mono',style:'color:var(--muted)'},CONCEPTS[t.concept].n),h('h3',{},t.title),h('p',{},t.hook),
+    h('span',{class:'chip'},st?(st.ok+' de '+st.tot+' passos à primeira'+(st.ok<st.tot?' · rever':'')):'Por explorar')));});
+  v.append(g);app.append(v);
+}
+function openLab(id){labOpen=id;if(location.hash!=='#laboratorio'){go('laboratorio');}else{app.innerHTML='';viewLab();window.scrollTo(0,0);}}
+function labTopic(t){
+  const v=h('div',{class:'view'});
+  v.append(h('div',{class:'row'},h('button',{class:'btn ghost small',type:'button',onclick:()=>{labOpen=null;app.innerHTML='';viewLab();}},'← Todos os conceitos')));
+  v.append(h('div',{style:'display:grid;gap:6px'},h('span',{class:'mono',style:'color:var(--muted)'},'Laboratório · '+CONCEPTS[t.concept].n),h('h1',{},t.title),h('p',{class:'lead'},t.hook)));
+  const area=h('div',{class:'view'});v.append(area);app.append(v);
+  const rec={ok:0,tot:t.steps.length,weak:false};
+  const step=k=>{
+    if(k>=t.steps.length){S.lab[t.id]={ok:rec.ok,tot:rec.tot};save();
+      area.append(h('div',{class:rec.weak?'fb no':'fb ok'},h('b',{class:'h'},rec.weak?'Conceito ainda a consolidar':'Conceito dominado!'),
+        h('div',{},rec.weak?'Algumas ideias ainda não ficaram claras. Volta ao Percurso, Nível C ou B, e refaz os exercícios de «'+CONCEPTS[t.concept].n+'». Depois repete este laboratório.':'Acertaste em todos os passos. Experimenta o Teste de conhecimento para aplicares o que aprendeste.'),
+        h('div',{class:'row'},h('button',{class:'btn small',type:'button',onclick:()=>openLab(t.id)},'Repetir laboratório'),h('button',{class:'btn ghost small',type:'button',onclick:()=>{labOpen=null;app.innerHTML='';viewLab();}},'Outro conceito'))));return;}
+    const s=t.steps[k];
+    const box=h('div',{class:'card stepbox'},h('span',{class:'mono',style:'color:var(--muted)'},'Passo '+(k+1)+' de '+t.steps.length),h('h2',{},s.t),h('p',{html:s.txt}),
+      h('div',{class:'analogy'},h('b',{},'Analogia: '),h('span',{html:s.ana})),h('p',{html:'<b>Exemplo:</b> '+s.exm}));
+    area.append(box);
+    const q1=Object.assign({type:'mc'},s.chk);if(s.chk.mis)q1.mis=Object.fromEntries(s.chk.opts.map((o,i)=>[i,i!==s.chk.a?s.chk.mis:null]).filter(x=>x[1]));
+    box.append(h('h3',{},'Verifica se percebeste'),exEl(q1,'A',{concept:t.concept,test:true,onDone:r=>{
+      if(r.ok){rec.ok++;box.append(h('div',{class:'row'},h('button',{class:'btn',type:'button',onclick:function(){this.disabled=true;step(k+1);}},k+1<t.steps.length?'Próximo passo →':'Terminar')));}
+      else{const alt=h('div',{class:'stepbox'},h('div',{class:'analogy'},h('b',{},'Vamos ver de outra forma. '),h('span',{html:s.alt.txt})));
+        const q2=Object.assign({type:'mc'},s.alt.chk);if(s.alt.chk.mis)q2.mis=Object.fromEntries(s.alt.chk.opts.map((o,i)=>[i,i!==s.alt.chk.a?s.alt.chk.mis:null]).filter(x=>x[1]));
+        alt.append(exEl(q2,'A',{concept:t.concept,test:true,onDone:r2=>{if(!r2.ok)rec.weak=true;alt.append(h('div',{class:'row'},h('button',{class:'btn',type:'button',onclick:function(){this.disabled=true;step(k+1);}},k+1<t.steps.length?'Próximo passo →':'Terminar')));}}));
+        box.append(alt);}
+    }}));
+  };
+  step(0);
+}
+
+/* ============ TESTE ============ */
+let T=null;
+function viewTest(){
+  const v=h('div',{class:'view'});app.append(v);
+  if(T&&T.i<TEST.length)return testQuestion(v);
+  if(T&&T.i>=TEST.length)return testReport(v,T.ans);
+  v.append(h('div',{style:'display:grid;gap:8px'},h('h1',{},'Teste de conhecimento'),h('p',{class:'lead'},'20 perguntas, das mais simples às mais exigentes: perguntas conceptuais, cenários do mundo real, resolução de problemas e desafios. Cada resposta é corrigida e explicada. No fim recebes um relatório com os teus pontos fracos e um plano de revisão personalizado.')));
+  const kinds={};TEST.forEach(q=>kinds[q.kind]=(kinds[q.kind]||0)+1);
+  v.append(h('div',{class:'row'},Object.entries(kinds).map(([k,n])=>h('span',{class:'chip'},k+' · '+n))));
+  if(needStudent()){v.append(studentGate(()=>{app.innerHTML='';viewTest();},'No fim do teste, os resultados são enviados ao teu professor. Escreve o teu nome e a tua turma.'));return;}
+  if(sendOn())v.append(h('p',{class:'legend-note'},'Aluno: '+S.name+' · Turma: '+S.turma+' · ',h('button',{class:'linkbtn',type:'button',onclick:()=>{S.turma='';save();app.innerHTML='';viewTest();}},'alterar')));
+  v.append(h('div',{class:'row'},h('button',{class:'btn',type:'button',onclick:()=>{T={i:0,ans:[]};app.innerHTML='';viewTest();}},'Começar o teste'),
+    S.test?h('button',{class:'btn ghost',type:'button',onclick:()=>{app.innerHTML='';const vv=h('div',{class:'view'});app.append(vv);testReport(vv,S.test.ans,S.test.date);}},'Ver o último relatório'):null));
+}
+function diffEl(d){const w=h('span',{class:'diff','aria-label':'Dificuldade '+d+' de 3'});[8,12,16].forEach((ht,i)=>w.append(h('i',{class:i<d?'on':'',style:'height:'+ht+'px'})));return w;}
+function testQuestion(v){
+  const q=TEST[T.i];
+  v.append(h('div',{class:'tq-head'},h('span',{class:'mono',style:'color:var(--muted)'},'Pergunta '+(T.i+1)+' de '+TEST.length),
+    h('div',{class:'bar',style:'flex:1;max-width:320px'},h('i',{style:'width:'+Math.round(T.i/TEST.length*100)+'%'}))));
+  const meta=[h('span',{class:'chip'},q.kind),h('span',{class:'chip'},CONCEPTS[q.concept].n),h('span',{class:'chip'},diffEl(q.d),['Planície','Planalto','Montanha'][q.d-1])];
+  const next=h('div',{});
+  v.append(exEl(q,'A',{test:true,metaExtra:meta,onDone:r=>{T.ans.push({id:q.id,ok:r.ok,mis:r.mis||[]});
+    next.append(h('button',{class:'btn',type:'button',onclick:()=>{T.i++;if(T.i>=TEST.length){S.test={date:new Date().toISOString(),ans:T.ans};save();}app.innerHTML='';viewTest();}},T.i+1<TEST.length?'Pergunta seguinte →':'Ver o meu relatório →'));}}),next);
+}
+function testReport(v,ans,date){
+  const byId=Object.fromEntries(TEST.map(q=>[q.id,q]));
+  const ok=ans.filter(a=>a.ok).length;const pct=Math.round(ok/ans.length*100);
+  const per={};Object.keys(CONCEPTS).forEach(c=>per[c]={ok:0,tot:0,err:0});
+  ans.forEach(a=>{const c=byId[a.id].concept;per[c].tot++;if(a.ok)per[c].ok++;else per[c].err++;});
+  ['C','B','A'].forEach(l=>Object.values(S.path[l]||{}).forEach(r=>{if(!per[r.c])return;per[r.c].tot+=.5;if(r.ok)per[r.c].ok+=.5;}));
+  const misCount={};ans.forEach(a=>a.mis.forEach(m=>misCount[m]=(misCount[m]||0)+1));['C','B','A'].forEach(l=>Object.values(S.path[l]||{}).forEach(r=>(r.mis||[]).forEach(m=>misCount[m]=(misCount[m]||0)+1)));
+  const kindStat={};ans.forEach(a=>{const k=byId[a.id].kind;kindStat[k]=kindStat[k]||{ok:0,tot:0};kindStat[k].tot++;if(a.ok)kindStat[k].ok++;});
+  const diffStat=[1,2,3].map(d=>{const xs=ans.filter(a=>byId[a.id].d===d);return xs.length?Math.round(xs.filter(a=>a.ok).length/xs.length*100):null;});
+  const level=pct>=85?'Domínio sólido':pct>=65?'Bom nível, com lacunas':pct>=45?'Em progresso':'A precisar de apoio';
+  const col=pct>=65?'var(--ok)':pct>=45?'var(--lvB)':'var(--bad)';
+  v.append(h('div',{style:'display:grid;gap:6px'},h('span',{class:'mono',style:'color:var(--muted)'},'Relatório'+(S.name?' de '+S.name:'')+(date?' · '+new Date(date).toLocaleDateString('pt-PT'):'')),h('h1',{},'O teu resultado')));
+  v.append(h('div',{class:'card score'},h('div',{class:'ring',style:`background:conic-gradient(${col} ${pct*3.6}deg, var(--paper2) 0)`},h('span',{},pct+'%')),
+    h('div',{style:'display:grid;gap:6px'},h('h2',{},level),h('p',{},ok+' respostas certas em '+ans.length+'.'),
+      h('p',{class:'legend-note'},'Por dificuldade: Planície '+(diffStat[0]??'–')+'% · Planalto '+(diffStat[1]??'–')+'% · Montanha '+(diffStat[2]??'–')+'%. Por tipo: '+Object.entries(kindStat).map(([k,s])=>k+' '+s.ok+'/'+s.tot).join(' · ')+'.'))));
+  // conceitos
+  const cb=h('div',{class:'cbars'});const rows=Object.entries(per).filter(([c,s])=>s.tot>0).map(([c,s])=>[c,Math.round(s.ok/s.tot*100),s]).sort((a,b)=>a[1]-b[1]);
+  rows.forEach(([c,p])=>cb.append(h('div',{class:'cbar'},h('span',{},CONCEPTS[c].n),h('div',{class:'track'},h('i',{style:'width:'+p+'%;background:'+(p>=80?'var(--ok)':p>=60?'var(--lvB)':'var(--bad)')})),h('b',{},p+'%'))));
+  v.append(h('section',{class:'card',style:'display:grid;gap:12px'},h('h2',{},'Domínio por conceito'),h('p',{class:'legend-note'},'Combina o teste (peso maior) com as primeiras tentativas no Percurso.'),cb));
+  // fraquezas recorrentes
+  const rec=Object.entries(misCount).filter(([m,n])=>n>=2).sort((a,b)=>b[1]-a[1]);
+  const weakC=rows.filter(([c,p,s])=>s.err>=2||p<60);
+  const fw=h('section',{class:'card',style:'display:grid;gap:10px'},h('h2',{},'Fraquezas recorrentes'));
+  if(!rec.length&&!weakC.length)fw.append(h('p',{},'Não foram detetados erros repetidos. Excelente consistência!'));
+  else{const ul=h('ul',{class:'clean'});weakC.forEach(([c,p,s])=>ul.append(h('li',{html:'<b>'+CONCEPTS[c].n+'</b>: '+p+'% de domínio'+(s.err?' ('+s.err+' erro'+(s.err>1?'s':'')+' no teste)':'')+'.'})));
+    rec.forEach(([m,n])=>ul.append(h('li',{html:'<b>Equívoco repetido ('+n+'×):</b> '+MIS[m]})));fw.append(ul);}
+  if(kindStat['Resolução de problemas']&&kindStat['Resolução de problemas'].ok/kindStat['Resolução de problemas'].tot<.5)fw.append(h('p',{class:'legend-note'},'Sabes os conceitos, mas tens dificuldade em aplicá-los a problemas. Treina com os passos do Laboratório: lê a pergunta, identifica o conceito, aplica a regra.'));
+  v.append(fw);
+  // erros explicados
+  const wrong=ans.filter(a=>!a.ok);
+  if(wrong.length){const el=h('div',{class:'errs'});wrong.forEach(a=>{const q=byId[a.id];const ansT=q.type==='mc'?stripTags(q.opts[q.a]):q.type==='multi'?q.a.map(i=>q.opts[i]).join(', '):q.type==='order'?q.items.join(' → '):q.model;
+    el.append(h('div',{class:'e'},h('b',{html:q.q}),h('span',{html:'<b>Resposta correta:</b> '+ansT}),h('span',{html:q.exp}),...a.mis.filter(m=>MIS[m]).map(m=>h('span',{class:'legend-note',html:'Equívoco: '+MIS[m]}))));});
+    v.append(h('section',{class:'card',style:'display:grid;gap:10px'},h('h2',{},'Os teus erros, explicados'),el));}
+  // plano de revisão
+  const plan=h('div',{class:'plan'});
+  const todo=rows.filter(([c,p])=>p<80);
+  if(!todo.length)plan.append(h('div',{class:'pi'},h('b',{},'Mantém o nível'),h('p',{},'Dominas todos os conceitos. Desafia-te com os próximos temas: escala numérica e cálculo de distâncias, coordenadas geográficas e gráficos termopluviométricos.')));
+  todo.forEach(([c,p],k)=>{const pri=p<60?'alta':'media';const pref=p<40?'C':p<60?'B':'A';
+    const lvl=[pref,'C','B','A'].find(x=>PATH[x].modules.some(m=>m.concept===c));
+    const mod=PATH[lvl].modules.find(m=>m.concept===c);const lab=CONCEPTS[c].lab;
+    const it=h('div',{class:'pi'},h('div',{class:'row'},h('b',{},(k+1)+'. '+CONCEPTS[c].n),h('span',{class:'pill '+(pri==='alta'?'alta':'media')},'Prioridade '+pri),h('span',{class:'legend-note'},p+'% de domínio')));
+    const ul=h('ul',{class:'clean'});
+    if(mod)ul.append(h('li',{},'Rever a etapa ',h('button',{class:'linkbtn',type:'button',onclick:()=>{if(!S.unlocked.includes(lvl))S.unlocked.push(lvl);S.cur={lvl,mod:PATH[lvl].modules.indexOf(mod)};save();go('percurso');}},'«'+mod.title+'» ('+LV[lvl].name+')'),': lê o conceito e os equívocos, e refaz os exercícios.'));
+    if(lab)ul.append(h('li',{},'Fazer o laboratório ',h('button',{class:'linkbtn',type:'button',onclick:()=>openLab(lab)},'«'+LAB.find(x=>x.id===lab).title+'»'),'.'));
+    ul.append(h('li',{},'Estudar no Glossário: '+GLOSS.filter(g=>termsFor(c).includes(g[0])).map(g=>g[0]).join(', ')+'.'));
+    ul.append(h('li',{},'Voltar a fazer o teste daqui a 2 ou 3 dias para confirmar.'));
+    it.append(ul);plan.append(it);});
+  v.append(h('section',{class:'card',style:'display:grid;gap:12px'},h('h2',{},'O teu plano de revisão'),h('p',{class:'legend-note'},'Ordenado do conceito mais fraco para o mais forte. Prioridade alta: menos de 60% de domínio.'),plan));
+  const ok2=rows.filter(([c,p])=>p>=80);
+  if(ok2.length)v.append(h('p',{class:'legend-note'},'Já dominas: '+ok2.map(([c])=>CONCEPTS[c].n).join(', ')+'.'));
+  if(sendOn()){
+    const when=date?new Date(date):new Date();
+    const wrongN=ans.map((a,i)=>a.ok?null:i+1).filter(Boolean);
+    const detalhe=rows.map(([c,p])=>CONCEPTS[c].n+' '+p+'%').join('; ');
+    const texto=['Atlas da Península Ibérica — Teste de conhecimento','',
+      'Aluno: '+(S.name||'—'),'Turma: '+(S.turma||'—'),'Data: '+when.toLocaleString('pt-PT'),'',
+      'Resultado: '+ok+'/'+ans.length+' ('+pct+'%) — '+level,
+      'Por dificuldade: Planície '+(diffStat[0]??'–')+'% · Planalto '+(diffStat[1]??'–')+'% · Montanha '+(diffStat[2]??'–')+'%','',
+      'Domínio por conceito:',...rows.map(([c,p])=>'  • '+CONCEPTS[c].n+': '+p+'%'),'',
+      'Perguntas erradas: '+(wrongN.length?wrongN.join(', '):'nenhuma'),
+      'Fraquezas recorrentes: '+(weakC.length?weakC.map(([c])=>CONCEPTS[c].n).join(', '):'nenhuma'),
+      ...(rec.length?['Equívocos repetidos:',...rec.map(([m,n])=>'  • ('+n+'×) '+MIS[m])]:[]),'',
+      'Percurso (recapitulações): '+['C','B','A'].map(l=>LV[l].name+' '+(S.recap[l]!=null?S.recap[l]+'%':'—')).join(' · '),
+      'Laboratório: '+(Object.keys(S.lab).length?Object.entries(S.lab).map(([id,s])=>LAB.find(x=>x.id===id).title+' '+s.ok+'/'+s.tot).join(' · '):'não utilizado')].join('\n');
+    const payload={jogo:'Atlas da Península Ibérica – Teste',nome:S.name||'',turma:S.turma||'',pontos:ok,maximo:ans.length,percent:pct,motivo:level,vidas:null,detalhe,teste:false,texto};
+    const c=cfg();const box=h('section',{class:'card send'},h('h2',{},'Enviar resultados ao professor'));
+    if(c.script){const st=h('div',{class:'fb info'},'A enviar os resultados…');box.append(st);
+      const send=()=>{st.className='fb info';st.textContent='A enviar os resultados…';
+        postResult(c.script,payload).then(()=>{st.className='fb ok';st.textContent='Resultados enviados automaticamente ao professor.';if(S.test){S.test.sent=true;save();}})
+        .catch(()=>{st.className='fb no';st.textContent='Não foi possível enviar automaticamente (sem ligação à internet?).'+(c.email?' Usa o botão de e-mail.':'');st.append(' ',h('button',{class:'linkbtn',type:'button',onclick:send},'Tentar outra vez'));});};
+      if(!date&&!(S.test&&S.test.sent))send();else{st.className='fb ok';st.textContent=S.test&&S.test.sent?'Estes resultados já foram enviados ao professor.':'Resultados guardados.';st.append(' ',h('button',{class:'linkbtn',type:'button',onclick:send},'Enviar outra vez'));}}
+    if(c.email){
+      const subj='Resultados: Atlas da Península Ibérica – '+(S.name||'Aluno')+(S.turma?' ('+S.turma+')':'');
+      const href='mailto:'+c.email+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(texto.split('\n').filter(l=>!l.startsWith('  • (')&&l!=='Equívocos repetidos:').join('\n'));
+      const ta=h('textarea',{id:'res-texto',readonly:true,style:'min-height:160px;font-family:var(--f-mono);font-size:.8rem'});ta.value=texto;
+      const cp=h('button',{class:'btn ghost',type:'button'},'Copiar resultados');cp.onclick=()=>copyText(texto,cp);
+      box.append(h('p',{},'O botão abre o teu programa de correio com a mensagem já escrita para '),h('p',{class:'mono'},c.email),
+        h('div',{class:'row'},h('a',{class:'btn',href:href},'Enviar por e-mail'),cp),
+        h('p',{class:'legend-note'},'Se o programa de correio não abrir, copia os resultados e envia-os para o endereço acima.'),ta);}
+    v.append(box);}
+  v.append(h('div',{class:'row'},h('button',{class:'btn',type:'button',onclick:()=>{T={i:0,ans:[]};app.innerHTML='';viewTest();}},'Repetir o teste'),h('button',{class:'btn ghost',type:'button',onclick:()=>{T=null;app.innerHTML='';viewTest();}},'Voltar')));
+}
+function termsFor(c){return({rep:['Globo terrestre','Planisfério','Fotografia aérea','Imagem de satélite'],lin:['Equador','Meridiano de Greenwich','Paralelo','Meridiano','Hemisfério','Trópico de Câncer','Trópico de Capricórnio','Círculo polar'],map:['Escala','Legenda','Orientação','Rosa-dos-ventos'],ori:['Pontos colaterais','Rosa-dos-ventos','Península'],rel:['Montanha','Planalto','Planície','Meseta','Cordilheira','Altitude'],cli:['Clima','Estado do tempo','Precipitação'],zon:['Zona temperada do Norte','Círculo polar','Trópico de Câncer'],rio:['Rio luso-espanhol','Rio nacional','Nascente','Foz','Afluente','Ribeira','Levada'],veg:['Folha caduca','Folha persistente','Ibéria Húmida','Ibéria Seca']})[c]||[];}
+
+/* ============ GLOSSÁRIO ============ */
+function viewGloss(){
+  const v=h('div',{class:'view'});const list=h('div',{class:'gloss'});
+  const draw=f=>{list.innerHTML='';GLOSS.filter(([t,d])=>!f||norm(t+' '+d).includes(norm(f))).forEach(([t,d])=>list.append(h('div',{class:'g'},h('b',{},t),h('p',{},d))));if(!list.children.length)list.append(h('p',{class:'legend-note'},'Nenhum termo encontrado. Experimenta outra palavra.'));};
+  v.append(h('div',{style:'display:grid;gap:8px'},h('h1',{},'Glossário'),h('p',{class:'lead'},GLOSS.length+' palavras-chave do tema, por ordem alfabética.')),
+    h('input',{type:'text',id:'gsearch',placeholder:'Procurar termo…','aria-label':'Procurar termo',style:'max-width:360px',oninput:e=>draw(e.target.value)}),list);
+  draw('');app.append(v);
+}
+
+/* ============ PROFESSOR ============ */
+function viewProf(){
+  const v=h('div',{class:'prof'});
+  v.innerHTML=`
+  <div style="display:grid;gap:8px"><span class="mono" style="color:var(--muted)">Área do professor</span><h1>Análise especializada das questões</h1>
+  <p class="lead">Avaliação das fichas de nível A, B e C (Grupos I e II) do ponto de vista científico e didático, com sugestões para usar esta aplicação em aula.</p></div>
+  <section><h2>Conceitos pressupostos, mas não explicados</h2><ul class="clean">
+   <li><b>Pontos cardeais e colaterais.</b> As questões de localização («a sudoeste») assumem que o aluno domina a rosa-dos-ventos e a regra de nomear primeiro Norte/Sul.</li>
+   <li><b>Escala.</b> Pede-se a classificação «pequena/grande escala» sem que a ficha mobilize a noção de redução nem a relação inversa com o denominador da escala numérica. É o conceito com mais erros previsíveis.</li>
+   <li><b>Os cinco elementos do mapa</b> (título, orientação, escala, legenda, fonte) são pedidos (nível A: «três dos cinco») mas nunca enumerados. O doc. 3 não tem legenda nem fonte visíveis, e o título está fora da imagem.</li>
+   <li><b>Hemisfério.</b> A opção «central» funciona como distrator, mas a ficha não relaciona o Equador e Greenwich com os hemisférios.</li>
+   <li><b>Clima vs. estado do tempo</b> e os <b>fatores do clima</b> (latitude, proximidade do mar, relevo). A associação clima–definição é memorística se o aluno não souber porque é que o litoral é ameno.</li>
+   <li><b>Critério de rio luso-espanhol vs. nacional</b> (nascente/bacia em Espanha), necessário para responder sem decorar.</li>
+   <li><b>Relação linhas ↔ zonas.</b> Os trópicos e os círculos polares (Grupo I) são os limites das zonas climáticas (Grupo II), mas a ficha não faz a ponte.</li></ul></section>
+  <section><h2>Limitações e imprecisões dos itens</h2><ul class="clean">
+   <li><b>«Regiões montanhosas, como as cordilheiras e as mesetas»</b> (G-II, 1.1, opção correta). Cientificamente, a meseta é um <b>planalto</b>, não uma região montanhosa. Sugere-se «regiões elevadas» ou «cordilheiras e planaltos». A aplicação assinala esta nuance na explicação.</li>
+   <li><b>Definições climáticas só por temperatura.</b> A legenda do doc. 2 inclui a precipitação (chuva abundante / moderada / pouca), mas as definições do quadro omitem-na. O clima temperado marítimo fica reduzido a «temperaturas amenas», o que não o distingue do mediterrâneo no inverno.</li>
+   <li><b>«Os quatro rios luso-espanhóis».</b> São os quatro <b>principais</b>. O Lima e o Tâmega também nascem na Galiza, e há rios de fronteira (Erges, Sever, Chança). Convém escrever «os quatro maiores».</li>
+   <li><b>Rios nacionais «no Norte».</b> O enunciado diz «no Norte», mas a solução diz «mais a norte» (Cávado e Ave). Há outras respostas aceitáveis (Neiva, Leça). A correção automática aceita-as.</li>
+   <li><b>Levadas como «cursos de água».</b> São obras humanas, não cursos de água naturais. É uma boa oportunidade para distinguir o natural do artificial e ligar ao Grupo III.</li>
+   <li><b>Item 4.2 da versão B</b> («rio mais próximo da tua localidade») é de resposta individual e não avaliável de forma objetiva. Na aplicação foi convertido em reflexão, com o exemplo local do Tejo e do rio Coina (Barreiro).</li>
+   <li><b>Versão C, 3.1 «Sublinha o título»</b>: o mapa não tem título dentro da imagem. Na aplicação passou a «escolhe o melhor título».</li>
+   <li><b>Ibéria Húmida / Ibéria Seca</b> é uma divisão binária: ignora áreas de transição, o efeito da altitude (manchas de folha caduca nas serras do sul) e os arquipélagos.</li>
+   <li><b>Fotografia aérea «captada por um drone»</b>: tradicionalmente é feita de avião. Convém não associar o conceito a um único meio.</li></ul></section>
+  <section><h2>Contexto em falta e informação a atualizar</h2><ul class="clean">
+   <li><b>Projeções cartográficas.</b> O planisfério aparece como «representação da totalidade da Terra» sem referência às deformações (Gronelândia vs. África). Hoje existem projeções de áreas iguais muito usadas em atlas.</li>
+   <li><b>Tecnologias de informação geográfica.</b> GPS, Google Earth, SIG e imagens Copernicus/Sentinel são o modo atual de «representar a Terra» e motivam os alunos. A imagem de satélite deixou de ser exótica.</li>
+   <li><b>Alterações climáticas.</b> As fronteiras entre climas e entre Ibéria Húmida e Seca não são fixas: a tendência para verões mais quentes, secas mais frequentes e risco de desertificação no sul é um contexto importante (relatórios do IPMA e da Agência Portuguesa do Ambiente).</li>
+   <li><b>Ponto mais alto de Portugal.</b> A ficha centra-se na Península, mas os alunos devem saber que é o Pico (Açores, 2351 m), e a Serra da Estrela (1993 m) no continente.</li>
+   <li><b>Escala local.</b> O Barreiro fica no estuário do Tejo, junto à foz do Coina: usar a paisagem local reforça os conceitos de rio, estuário, planície e clima mediterrâneo.</li></ul></section>
+  <section><h2>Técnicas mais avançadas</h2><ul class="clean">
+   <li>Escala numérica e cálculo de distâncias reais (régua + barra de escala).</li>
+   <li>Coordenadas geográficas (latitude e longitude) para a localização absoluta.</li>
+   <li>Leitura de gráficos termopluviométricos (climogramas) de Porto, Madrid e Faro para caracterizar os climas com dados.</li>
+   <li>Perfis topográficos simples a partir do mapa hipsométrico (por exemplo, Lisboa–Madrid).</li>
+   <li>Comparar imagens de satélite de datas diferentes (vegetação, incêndios, albufeiras).</li></ul></section>
+  <section><h2>Equívocos mais comuns (e onde a aplicação os trabalha)</h2><ul class="clean">
+   <li>Pequena escala = «coisas pequenas» → Laboratório «A escala».</li>
+   <li>Frio nos polos por estarem «longe do Sol» → Laboratório «Linhas imaginárias e zonas climáticas».</li>
+   <li>Meseta = planície → Laboratório «Planalto, planície ou montanha?».</li>
+   <li>Cores do mapa hipsométrico lidas como vegetação → mesmo laboratório, passo 2.</li>
+   <li>Clima = estado do tempo; esquecer o papel do mar → Laboratório «Clima e influência do mar».</li>
+   <li>Trocar sudoeste/noroeste e caduca/persistente → laboratórios correspondentes.</li></ul>
+   <p class="legend-note">O relatório do teste identifica estes equívocos quando se repetem (2 ou mais vezes) e gera um plano de revisão por conceito.</p></section>
+  <section><h2>Próximos tópicos a estudar, por importância</h2><ol class="rank">
+   <li><div><b>Escala numérica e gráfica.</b> Calcular distâncias reais e comparar escalas. É a base de toda a leitura cartográfica e a maior fonte de erro.</div></li>
+   <li><div><b>Localização relativa e absoluta.</b> Rosa-dos-ventos, pontos colaterais e iniciação às coordenadas geográficas.</div></li>
+   <li><div><b>Fatores do clima e climogramas.</b> Latitude, proximidade do mar e relevo, e leitura de gráficos termopluviométricos.</div></li>
+   <li><div><b>Formas de relevo e mapa hipsométrico.</b> Montanha, planalto, planície e vale, e perfis topográficos simples.</div></li>
+   <li><div><b>Rede hidrográfica.</b> Nascente, foz, afluente, bacia hidrográfica e estuário (Tejo e Barreiro como caso de estudo).</div></li>
+   <li><div><b>Vegetação natural e adaptação ao clima.</b> Espécies das duas Ibérias, montado e cortiça.</div></li>
+   <li><div><b>Ação humana sobre a paisagem</b> (Grupo III, não incluído nesta aplicação): aterros, dunas, incêndios, ordenamento do território.</div></li>
+   <li><div><b>Projeções cartográficas e ferramentas digitais</b> (SIG, Google Earth, imagens de satélite).</div></li>
+   <li><div><b>Ligação à História:</b> como o quadro natural (rios, litoral, relevo) influenciou a fixação dos primeiros povos na Península, o tema seguinte do programa.</div></li></ol></section>
+  <section><h2>Sugestões de uso em aula</h2><ul class="clean">
+   <li>Diferenciação: alunos com mais dificuldades começam no Nível C; os restantes podem saltar para o B após a recapitulação.</li>
+   <li>O teste final é igual para todos e permite comparar o progresso. O relatório pode ser projetado ou mostrado ao aluno individualmente.</li>
+   <li>Os dados ficam só no navegador de cada aluno. Para reiniciar um computador partilhado, use o botão abaixo.</li></ul>
+   <div class="row" id="resetrow"></div></section>`;
+  app.append(v);
+  const rr=$('#resetrow');const out=h('span',{class:'legend-note'});
+  const b=h('button',{class:'btn ghost small',type:'button'},'Apagar o progresso guardado neste navegador');
+  b.onclick=()=>{if(b.dataset.c){S={name:'',path:{C:{},B:{},A:{}},recap:{},unlocked:['C'],cur:{lvl:null,mod:0},lab:{},test:null};T=null;save();out.textContent='Progresso apagado.';b.textContent='Apagar o progresso guardado neste navegador';delete b.dataset.c;}else{b.dataset.c='1';b.textContent='Clica outra vez para confirmar';}};
+  rr.append(b,out);
+  v.insertBefore(sendConfigEl(),v.children[1]);
+}
+const GAS_CODE=`// Atlas da Península Ibérica — receção de resultados
+// (é o mesmo script do Construtor de Mapas de Jogo: pode usar a mesma implementação)
+// Envia um e-mail ao professor e regista cada resultado na folha "Resultados".
+const EMAIL = "";   // vazio = e-mail da conta que publica o script
+const ENVIAR_EMAIL = true;    // false = só registar na folha (sem e-mails)
+
+function doPost(e) {
+  const d = JSON.parse(e.postData.contents);
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sh = ss.getSheetByName("Resultados") || ss.insertSheet("Resultados");
+  if (sh.getLastRow() === 0) {
+    sh.appendRow(["Data", "Jogo", "Aluno", "Turma", "Pontos", "Máximo", "%", "Fim do jogo", "Vidas", "Fases", "Teste"]);
+    sh.setFrozenRows(1);
+  }
+  sh.appendRow([new Date(), d.jogo, d.nome, d.turma, d.pontos, d.maximo, d.percent / 100,
+                d.motivo, d.vidas === null ? "" : d.vidas, d.detalhe, d.teste ? "sim" : ""]);
+  sh.getRange(sh.getLastRow(), 7).setNumberFormat("0%");
+  if (ENVIAR_EMAIL) {
+    const para = EMAIL || Session.getEffectiveUser().getEmail();
+    const assunto = (d.teste ? "[TESTE] " : "") + "Resultados: " + d.jogo + " – " + d.nome + (d.turma ? " (" + d.turma + ")" : "");
+    MailApp.sendEmail(para, assunto, d.texto);
+  }
+  return ContentService.createTextOutput("ok");
+}`;
+function sendConfigEl(){
+  const c=cfg();const embedded=!!(CONFIG.email||CONFIG.script);
+  const em=h('input',{type:'text',id:'cfg-email',inputmode:'email',placeholder:'professor@escola.pt',value:c.email});
+  const sc=h('input',{type:'text',id:'cfg-script',placeholder:'https://script.google.com/macros/s/…/exec',value:c.script});
+  const msg=h('div',{});
+  const note=(cls,t)=>{msg.innerHTML='';msg.append(h('div',{class:'fb '+cls},t));};
+  const read=()=>({email:em.value.trim(),script:sc.value.trim()});
+  const valid=x=>{if(x.email&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(x.email)){note('no','O e-mail não parece válido. Confirma o endereço (ex.: professor@escola.pt).');return false;}
+    if(x.script&&!/^https:\/\/script\.google\.com\/.+\/exec$/.test(x.script)){note('no','O endereço do Apps Script deve começar por https://script.google.com/ e terminar em /exec.');return false;}return true;};
+  const built=x=>SRC.replace(/const CONFIG = \{[^}]*\}; \/\*CONFIG\*\//,'const CONFIG = '+JSON.stringify(x)+'; /*CONFIG*/');
+  const bSave=h('button',{class:'btn',type:'button',onclick:()=>{const x=read();if(!valid(x))return;TCFG=x;try{localStorage.setItem(CKEY,JSON.stringify(x));}catch(e){}
+    note('ok',(x.email||x.script)?'Configuração guardada neste navegador. Para os alunos, descarregue a aplicação configurada e distribua esse ficheiro.':'Envio de resultados desativado neste navegador.');}},'Guardar neste navegador');
+  const bTest=h('button',{class:'btn ghost',type:'button',onclick:()=>{const x=read();if(!x.script){note('no','Cole primeiro o endereço do Apps Script.');return;}if(!valid(x))return;
+    note('info','A enviar um resultado de teste…');
+    postResult(x.script,{jogo:'Atlas da Península Ibérica – Teste',nome:'Aluno de teste',turma:'—',pontos:15,maximo:20,percent:75,motivo:'Bom nível, com lacunas',vidas:null,detalhe:'Envio de verificação',teste:true,texto:'Envio de teste do Atlas da Península Ibérica.\nSe recebeu esta mensagem e há uma linha nova na folha «Resultados», está tudo a funcionar.'})
+      .then(()=>note('ok','Pedido enviado. Confirme a nova linha na folha «Resultados» e o e-mail marcado com [TESTE]. Se nada chegar, reveja o passo 3 das instruções (acesso: Qualquer pessoa).'))
+      .catch(()=>note('no','Não foi possível contactar o Apps Script. Verifique a ligação à internet e o endereço. Dentro da página publicada no Claude o envio é bloqueado: use o ficheiro descarregado.'));}},'Enviar resultado de teste');
+  const FN='atlas-peninsula-iberica-alunos.html';
+  const bDown=h('button',{class:'btn ghost',type:'button',onclick:async()=>{const x=read();if(!valid(x))return;const html=built(x);
+    if(window.showSaveFilePicker){
+      try{const fh=await window.showSaveFilePicker({suggestedName:FN,types:[{description:'Página HTML',accept:{'text/html':['.html']}}]});
+        const w=await fh.createWritable();await w.write(html);await w.close();
+        note('ok','Guardado como «'+fh.name+'». Confirme que escolheu a pasta onde estão as imagens (imagem1a.jpg, imagem1b.jpg, imagem1c.jpg…). Distribua essa pasta aos alunos.');return;}
+      catch(e){if(e&&e.name==='AbortError'){note('info','Gravação cancelada.');return;}}}
+    try{const blob=new Blob([html],{type:'text/html;charset=utf-8'});const a=h('a',{href:URL.createObjectURL(blob),download:FN});document.body.append(a);a.click();a.remove();
+      note('ok','O ficheiro «'+FN+'» foi para a pasta de Transferências. Mova-o para a pasta onde estão as imagens: só aí as imagens aparecem. Se a transferência não começar, use «Copiar HTML configurado».');}catch(e){note('no','A transferência foi bloqueada. Use «Copiar HTML configurado».');}}},'Guardar versão dos alunos…');
+  const bCopy=h('button',{class:'btn ghost',type:'button'},'Copiar HTML configurado');bCopy.onclick=()=>{const x=read();if(valid(x))copyText(built(x),bCopy);};
+  const code=h('pre',{class:'code'},GAS_CODE);const bCode=h('button',{class:'btn ghost small',type:'button'},'Copiar código');bCode.onclick=()=>copyText(GAS_CODE,bCode);
+  return h('section',{class:'cfg'},
+    h('h2',{},'Envio de resultados ao professor'),
+    h('p',{},'Com o envio configurado, a aplicação pede o nome e a turma no início, e o ecrã final do teste mostra o botão de envio. A versão descarregada para os alunos não tem a área do Professor: guarde este ficheiro original para alterar a configuração mais tarde.'+(embedded?' Este ficheiro já traz uma configuração incorporada.':'')),
+    h('div',{class:'cfgf'},
+      h('label',{for:'cfg-email'},h('b',{},'Por e-mail do professor'),h('span',{class:'legend-note'},'O aluno tem um botão que abre o programa de correio com os resultados já escritos para este endereço.'),em),
+      h('label',{for:'cfg-script'},h('b',{},'Envio automático (opcional)'),h('span',{class:'legend-note'},'Endereço do Google Apps Script. Os resultados chegam sozinhos ao seu e-mail e ficam registados numa folha Google; o aluno não precisa de ter correio configurado.'),sc)),
+    h('div',{class:'row'},bSave,bTest,bDown,bCopy),msg,
+    h('details',{},h('summary',{},'Instruções e código para o envio automático'),
+      h('ol',{class:'clean',style:'margin-block:10px'},
+        h('li',{},'Crie uma Folha de Cálculo Google nova e abra Extensões → Apps Script.'),
+        h('li',{},'Apague o código que lá está e cole o código abaixo. Se quiser receber noutro endereço, escreva-o em EMAIL. Guarde.'),
+        h('li',{},'Clique em Implementar → Nova implementação → tipo «Aplicação Web». Executar como: «Eu». Quem tem acesso: «Qualquer pessoa».'),
+        h('li',{},'Autorize o acesso pedido pela Google e copie o URL da aplicação Web (termina em /exec).'),
+        h('li',{},'Cole o URL no campo «Envio automático», clique em «Enviar resultado de teste» e confirme a linha na folha e o e-mail.'),
+        h('li',{},'Clique em «Guardar versão dos alunos…» e grave o ficheiro «atlas-peninsula-iberica-alunos.html» na pasta onde estão as imagens. Distribua essa pasta aos alunos. Guarde o ficheiro original: é nele que pode alterar a configuração.')),
+      h('p',{class:'legend-note'},'Se já tem este script implementado para o Construtor de Mapas de Jogo, pode usar o mesmo endereço: os resultados entram na mesma folha, identificados na coluna «Jogo».'),
+      h('div',{class:'row',style:'justify-content:flex-end'},bCode),code));
+}
+
+/* ============ ARRANQUE ============ */
+/* Verifica se as imagens estão na mesma pasta */
+(function(){const pr=new Image();pr.onerror=function(){const w=h('div',{class:'wrap',style:'padding-block:10px 0'},h('div',{class:'fb no',role:'alert'},h('b',{class:'h'},'As imagens não foram encontradas.'),
+  h('div',{},'Esta aplicação tem de estar na mesma pasta que as imagens (imagem1a.jpg, imagem1b.jpg, imagem1c.jpg…). Coloque o ficheiro HTML nessa pasta e volte a abri-lo.')));
+  app.parentNode.insertBefore(w,app);};pr.src=IMG.C.globo;})();
+go((location.hash||'#percurso').slice(1));
+</script></body></html>
